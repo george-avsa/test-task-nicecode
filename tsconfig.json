@@ -2,7 +2,7 @@
     "compilerOptions": {
       "baseUrl": "src",
       "target": "es5",
-      "allowJs": true,
+      // "allowJs": true,
       // fix problems for "imports something from 'something'"
       "esModuleInterop": true,
       // for "imports something from 'something'"

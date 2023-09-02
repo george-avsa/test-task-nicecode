@@ -1,6 +1,13 @@
+import Header from "./components/Header";
+import Search from "./components/ControlPanel";
+import Content from "./components/Content";
+
 function App() {
     return (
-        <h1>1234</h1>
+        <>
+            <Header></Header>
+            <Content></Content>
+        </>
     );
 }
 
