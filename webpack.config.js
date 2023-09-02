@@ -23,13 +23,38 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.(svg|png|gif|jpg)$/,
-                exclude: /fonts/,
-                loader: 'file-loader'
+                test: /\.(png|jpg|gif)$/i,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 1000000,
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.svg$/,
+                use: ['@svgr/webpack', 'url-loader'],
             },
             {
                 test: /\.(ttf|eot|woff|svg|woff2)$/,
                 loader: "file-loader"
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                  "style-loader",
+                  "css-loader",
+                  "sass-loader",
+                ],
+            },
+            {
+                test: /\.css$/i,
+                use: [
+                  "style-loader",
+                  "css-loader",
+                ],
             }
 
         ],
