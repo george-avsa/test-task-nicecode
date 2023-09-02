@@ -1,2 +1,51 @@
 aside
     width: 366px
+
+.persons-list
+    width: 100%
+    margin-top: 15px
+    
+    div:not(:last-child)
+        margin-bottom: 10px
+
+.persons-list__item
+    position: relative
+    display: flex
+    align-items: center
+
+    padding: 10px
+    border-radius: 4px
+    box-shadow: 0px 1px 4px 0px rgba(51, 51, 51, 0.30)
+    background: #FFFFFF
+    transition: all .2s
+    cursor: pointer
+    overflow: hidden
+
+    &:hover
+        background: #F1F2F4
+        outline: 1px solid #FFF
+
+.persons-list__active
+    position: absolute
+    top: 0
+    left:0
+    width: 2px
+    height: 100%
+    background: #4198C5
+
+.person-item__avatar
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    margin-right: 10px
+
+.person-item__name
+    flex-grow: 1
+    color: #161718
+    font-family: SF Pro Display
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+
+.person-item__telegram
+    margin-right: 10px
