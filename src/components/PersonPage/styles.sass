@@ -1,9 +1,13 @@
 .person-page
-    flex-grow: 1
+    display: flex
+    flex-direction: column
     height: 100%
     padding-left: 30px
+    min-height: 100%
+    box-sizing: border-box
 
 .person-page__controls
+    box-sizing: border-box
     display: flex
     width: 100%
     padding: 10px
@@ -18,3 +22,98 @@
     background-position: center
     background-repeat: no-repeat
     background-size: 100%
+    img
+        width: 90px
+        height: 90px
+
+.person-page__info
+    flex-grow: 1
+    margin-left: 14px
+
+.person-page__name
+    margin-top: 5px
+
+    color: #161718
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: 20px
+
+.person-page__description
+    color: #161718
+    font-size: 12px
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+
+.person-page__more
+    margin: 18px 13px 0px 20px
+
+.person-page__menu
+    display: flex
+    align-items: center
+
+    margin-top: 10px
+    padding: 0px 20px 0 10px
+
+.menu__item
+    color: #616F82
+    font-size: 14px
+    font-style: normal
+    font-weight: 400
+    line-height: 20px
+    cursor: pointer
+
+.menu__item--active
+    color: #4198C5
+
+.menu__divider
+    width: 1px
+    height: 18px
+    margin: 0px 20px
+    background: #CDCDCD
+
+.menu__plus
+    width: 26px!important
+    height: 26px!important
+    border: 1.1px solid #616F82 
+    
+    img
+        width: 10px
+        height: 10px
+
+.person-page__new
+    flex-grow: 1
+    display: flex
+    align-items: center
+    justify-content: flex-end
+
+.person-page__content
+    background: #FFFFFF
+    border-radius: 4px
+    width: 100%
+    height: 100%
+    margin-top: 10px
+    padding: 15px
+    box-sizing: border-box
+    box-shadow: 0px 1px 4px 0px rgba(30, 30, 30, 0.1)
+
+.note-item__text
+    display: flex
+
+.note-item__time
+    float: left
+    margin-right: 12px
+    color: #616F82
+
+.note-item p
+    color: #161718
+    font-size: 14px
+    font-style: normal
+    font-weight: 400
+    line-height: 20px
+    width: 680px
+
+.node-item__more
+    margin-left: 20px!important
+    background: transparent!important

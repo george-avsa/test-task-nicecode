@@ -1,13 +1,14 @@
-function Icon({children, small=true, avatar=false, className=""}) {
+function Icon({children, small=true, avatar=false, className="", onClick=()=>{}}) {
     return (
-        <button className={`
+        <div className={`
             icon
             ${avatar ? 'icon--avatar' : ''} 
             ${small ? 'icon--small' : ''} 
             ${className}`}
+            onClick={onClick}
         >
             {children}
-        </button>
+        </div>
     );
 }
 

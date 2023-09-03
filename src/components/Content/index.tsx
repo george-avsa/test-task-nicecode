@@ -57,7 +57,7 @@ function Content() {
                     selectMode={selectMode}
                     setSelectMode={setSelectMode}
                 ></Aside>
-                <PersonPage image></PersonPage>
+                <PersonPage person={activePerson}></PersonPage>
             </div>
         </div>
     );

@@ -11,7 +11,7 @@ function PersonItem({
         <div className="persons-list__item" id={person.id} onClick={(e) => handleClick(e)}>
             {active && <div className="persons-list__active"></div>}
             {selectMode && (
-                <Checkbox checked={person.selected} className="person-item__checkbox" />
+                <Checkbox checked={person.selected} className="person-item__checkbox" htmlFor={person.id}/>
             )}
             <img 
                 className="person-item__avatar" 
