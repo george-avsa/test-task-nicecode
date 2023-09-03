@@ -4,26 +4,20 @@ import PersonItem from "./PersonItem";
 function PersonsList({
     persons, 
     activePerson,
-    handleClick
+    handleClick,
+    selectMode,
 }) {
     return (
         <div className="persons-list">
-            {persons.map((person:Person) => {
-                if (JSON.stringify(person) === JSON.stringify(activePerson)) {
-                    return <PersonItem 
-                                active 
-                                person={person} 
-                                key={person.id}
-                                handleClick={handleClick}
-                            ></PersonItem>
-                } else {
-                    return <PersonItem 
-                                person={person} 
-                                key={person.id}
-                                handleClick={handleClick}
-                            ></PersonItem>
-                }
-            })}
+            {persons.map((person:Person) => (
+                <PersonItem 
+                    selectMode={selectMode}
+                    active={person.id === activePerson.id ? true : false} 
+                    person={person} 
+                    key={person.id}
+                    handleClick={handleClick}
+                ></PersonItem>
+            ))}
         </div>
     );
 }
