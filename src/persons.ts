@@ -37,6 +37,7 @@ export interface Person {
     meetings: Meeting[],
     videos: Video[],
     events: IEvent[],
+    selected: boolean,
 }
 
 export const personsInitial:Person[] = [
@@ -126,7 +127,8 @@ export const personsInitial:Person[] = [
                 datetime: new Date(2021, 3, 9, 17, 0),
                 previewImage: 'tyaga.png',
             },
-        ],
+        ], 
+        selected: false
     },
     {
         id: 'denis1',
@@ -139,6 +141,7 @@ export const personsInitial:Person[] = [
         meetings: [],   
         videos: [], 
         events: [], 
+        selected: false
     },
     {
         id: 'alexandra2',
@@ -151,6 +154,7 @@ export const personsInitial:Person[] = [
         meetings: [],   
         videos: [], 
         events: [], 
+        selected: false
     },
     {
         id: 'alevtina1',
@@ -163,6 +167,7 @@ export const personsInitial:Person[] = [
         meetings: [],   
         videos: [], 
         events: [], 
+        selected: false
     },
     {
         id: 'dmitriy1',
@@ -175,6 +180,7 @@ export const personsInitial:Person[] = [
         meetings: [],   
         videos: [], 
         events: [], 
+        selected: false
     },
     {
         id: 'nosikov@list.ru',
@@ -187,6 +193,7 @@ export const personsInitial:Person[] = [
         meetings: [],   
         videos: [], 
         events: [], 
+        selected: false
     },
     {
         id: 'alexander1',
@@ -199,6 +206,7 @@ export const personsInitial:Person[] = [
         meetings: [],   
         videos: [], 
         events: [], 
+        selected: false
     },
     {
         id: 'artur1',
@@ -211,6 +219,7 @@ export const personsInitial:Person[] = [
         meetings: [],   
         videos: [], 
         events: [], 
+        selected: false
     },
     {
         id: 'rufina1',
@@ -223,6 +232,7 @@ export const personsInitial:Person[] = [
         meetings: [],   
         videos: [], 
         events: [], 
+        selected: false
     },
     {
         id: 'victoria1',
@@ -235,6 +245,7 @@ export const personsInitial:Person[] = [
         meetings: [],   
         videos: [], 
         events: [], 
+        selected: false
     },
     {
         id: 'victoria2',
@@ -247,5 +258,6 @@ export const personsInitial:Person[] = [
         meetings: [],   
         videos: [], 
         events: [], 
+        selected: false
     },
 ];
