@@ -1,9 +1,14 @@
 .person-page
-    flex-grow: 1
+    display: flex
+    flex-direction: column
+    width: 794px
     height: 100%
     padding-left: 30px
+    min-height: 100%
+    box-sizing: border-box
 
 .person-page__controls
+    box-sizing: border-box
     display: flex
     width: 100%
     padding: 10px
@@ -18,3 +23,227 @@
     background-position: center
     background-repeat: no-repeat
     background-size: 100%
+    img
+        width: 90px
+        height: 90px
+
+.person-page__info
+    flex-grow: 1
+    margin-left: 14px
+
+.person-page__name
+    margin-top: 5px
+
+    color: #161718
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: 20px
+
+.person-page__description
+    color: #161718
+    font-size: 12px
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+
+.person-page__more
+    position: relative
+    margin: 5px 5px 0px 20px
+    background: #FFF!important
+    svg
+        fill: #161718!important
+    &:hover
+        background: #4198C5!important
+        svg
+            fill: #fff!important
+
+.person-page__menu
+    display: flex
+    align-items: center
+
+    margin-top: 10px
+    padding: 0px 20px 0 10px
+
+.menu__item
+    color: #616F82
+    font-size: 14px
+    font-style: normal
+    font-weight: 400
+    line-height: 20px
+    cursor: pointer
+
+.menu__item--active
+    color: #4198C5
+
+.menu__divider
+    width: 1px
+    height: 18px
+    margin: 0px 20px
+    background: #CDCDCD
+
+.menu__plus
+    width: 26px!important
+    height: 26px!important
+    border: 1.1px solid #616F82 
+    
+    img
+        width: 10px
+        height: 10px
+
+.person-page__new
+    flex-grow: 1
+    display: flex
+    align-items: center
+    justify-content: flex-end
+
+.person-page__content
+    background: #FFFFFF
+    border-radius: 4px
+    width: 100%
+    height: 100%
+    margin-top: 10px
+    padding: 15px
+    box-sizing: border-box
+    box-shadow: 0px 1px 4px 0px rgba(30, 30, 30, 0.1)
+
+.note-item:not(:last-child)
+    margin-bottom: 20px
+
+.note-item__text
+    display: flex
+
+.note-item__time
+    float: left
+    margin-right: 12px
+    color: #616F82
+
+.note-item p
+    color: #161718
+    font-size: 14px
+    font-style: normal
+    font-weight: 400
+    line-height: 20px
+    width: 680px
+
+.node-item__more
+    margin-left: 20px!important
+    background: transparent!important
+
+.person-page__dropdown
+    position: absolute
+    bottom: -75px
+    left: -210px
+    width: 230px
+    height: 88px
+    background: #FFFFFF
+    filter: drop-shadow(0px 2px 16px rgba(34, 34, 34, 0.16))
+    border-radius: 4px
+    padding: 8px 0
+    box-sizing: border-box
+
+.dropdown__item
+    width: 100%
+    height: 36px
+    display: flex
+    align-items: center
+    padding: 0 20px
+    box-sizing: border-box
+    &:hover
+        background: #F1F2F3
+
+.node-item__upload
+    border-radius: 4px
+    padding: 4px
+    background: #CDCDCD
+    display: inline-block
+    margin-top: 10px
+
+.consultation
+    display: flex
+    position: relative
+
+    width: 100%
+    min-height: 66px
+    padding: 11px 10px
+    border: 1px solid #CDCDCD
+    box-sizing: border-box
+    border-radius: 4px
+
+    &:hover
+        border: 1px solid #4198C5
+        cursor: pointer
+        .icon
+            background: #4198C5
+            svg
+                fill: #fff
+    
+    &:not(:first-child)
+        margin-top: 10px
+
+
+.consultation__description
+    margin-left: 10px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+.consultation__name
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: 16px
+
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+
+    width: 400px
+
+.consultation__time
+    font-size: 14px
+    line-height: normal
+    font-style: normal
+    font-weight: 400
+
+.consultation__not-confirmed
+    position: absolute
+    right: 11px
+    bottom: 7px
+
+    font-size: 14px
+    font-style: normal
+    font-weight: 400
+    color: #F00F00
+
+.video__preview
+    width: 82px
+    height: 46px
+
+.video__author-name, .video__date
+    color: #616F82
+    font-size: 14px
+
+.event__info
+    display: flex
+
+    div:not(:first-child)
+        margin-left: 18px
+
+.event-info__item
+    display: flex
+    align-items: center
+
+    svg
+        margin-right: 6px
+
+.event-info__item
+    display: flex
+    align-items: center
+
+    span
+        font-size: 12px
+        font-style: normal
+        font-weight: 400
+        line-height: normal
+        color: #161718

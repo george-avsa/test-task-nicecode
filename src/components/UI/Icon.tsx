@@ -1,13 +1,15 @@
-function Icon({children, small=true, avatar=false, className=""}) {
+function Icon({children, small=true, avatar=false, className="", onClick=()=>{}, dropdownRef=null}) {
     return (
-        <button className={`
+        <div className={`
             icon
             ${avatar ? 'icon--avatar' : ''} 
             ${small ? 'icon--small' : ''} 
             ${className}`}
+            onClick={onClick}
+            ref={dropdownRef}
         >
             {children}
-        </button>
+        </div>
     );
 }
 
