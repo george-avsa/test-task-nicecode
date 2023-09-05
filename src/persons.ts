@@ -3,15 +3,17 @@ interface Meeting {
     endDatetime: Date,
     type: 'online' | 'face-to-face',
     confirmed: boolean
+    inProgress: boolean,
+    name: string
 } 
 
 interface Note {
     date: Date,
     text: string,
-    uploaded: string[]
+    uploaded: string
 }
 
-interface Video {
+export interface Video {
     name: string,
     startDatetime: Date | null,
     endDatetime: Date | null,
@@ -20,7 +22,7 @@ interface Video {
     authorName: string,
 }
 
-interface IEvent {
+export interface IEvent {
     name: string,
     datetime: Date,
     previewImage: string,
@@ -42,22 +44,22 @@ export interface Person {
 
 export const personsInitial:Person[] = [
     {
-        id: 'alexnadra1',
-        firstName: 'Александра',
-        lastName: 'Кравцова',
-        telegram: true,
+        id: 'denis1',
+        firstName: 'Денис',
+        lastName: 'Рожков',
+        telegram: false,
         warning: false,
-        avatar: 'kravcova_alexandra.png',
+        avatar: 'rozhkov_denis.png',
         notes: [
             {
                 date: new Date(2019, 11, 20),
                 text: 'Физические упражнения способствуют активизации мышечных сокращений, кровотока в тканях, снимают отечность, повышают энергетические возможности мышц. Улучшенное питание мышечной ткани ускоряет замещение различных посттравматических дефектов в самих мышцах, костной ткани, связках и сухожилиях.',
-                uploaded: []
+                uploaded: ''
             },
             {
                 date: new Date(2019, 11, 20),
                 text: 'Улучшенное питание мышечной ткани ускоряет замещение различных посттравматических дефектов в самих мышцах, костной ткани, связках и сухожилиях.',
-                uploaded: ['mapNotes.png']
+                uploaded: 'mapNotes.png'
             }
         ],
         meetings: [
@@ -65,19 +67,25 @@ export const personsInitial:Person[] = [
                 startDatetime: new Date(2019, 0, 15, 12, 30),
                 endDatetime: new Date(2019, 0, 15, 13, 0),
                 type: 'online',
-                confirmed: true
+                confirmed: true,
+                inProgress: true,
+                name: 'Online консультация'
             },
             {
                 startDatetime: new Date(2019, 0, 15, 12, 30),
                 endDatetime: new Date(2019, 0, 15, 13, 0),
                 type: 'online',
-                confirmed: true
+                confirmed: true,
+                inProgress: false,
+                name: 'Online консультация'
             },
             {
                 startDatetime: new Date(2019, 0, 15, 12, 30),
                 endDatetime: new Date(2019, 0, 15, 13, 0),
                 type: 'face-to-face',
-                confirmed: false
+                confirmed: false,
+                inProgress: false,
+                name: 'Личный прием'
             }
         ],
         videos: [
@@ -131,12 +139,12 @@ export const personsInitial:Person[] = [
         selected: false
     },
     {
-        id: 'denis1',
-        firstName: 'Денис',
-        lastName: 'Рожков',
-        telegram: false,
+        id: 'alexnadra1',
+        firstName: 'Александра',
+        lastName: 'Кравцова',
+        telegram: true,
         warning: false,
-        avatar: 'rozhkov_denis.png',
+        avatar: 'kravcova_alexandra.png',
         notes: [],  
         meetings: [],   
         videos: [], 

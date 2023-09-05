@@ -1,5 +1,6 @@
 import Checkbox from './../UI/Chekbox';
 import {ReactComponent as TelegramIcon} from './../../assets/telegram.svg';
+import {ReactComponent as WarningIcon} from './../../assets/Mod.svg';
 
 function PersonItem({
     person, 
@@ -20,6 +21,9 @@ function PersonItem({
             <span className="person-item__name">{`${person.firstName} ${person.lastName}`}</span>
             {person.telegram && 
                 <TelegramIcon className='person-item__telegram' />
+            }
+            {person.warning && 
+                <WarningIcon className='person-item__warning' />
             }
         </div>
     );

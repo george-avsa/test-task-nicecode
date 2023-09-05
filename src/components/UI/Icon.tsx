@@ -1,4 +1,4 @@
-function Icon({children, small=true, avatar=false, className="", onClick=()=>{}}) {
+function Icon({children, small=true, avatar=false, className="", onClick=()=>{}, dropdownRef=null}) {
     return (
         <div className={`
             icon
@@ -6,6 +6,7 @@ function Icon({children, small=true, avatar=false, className="", onClick=()=>{}}
             ${small ? 'icon--small' : ''} 
             ${className}`}
             onClick={onClick}
+            ref={dropdownRef}
         >
             {children}
         </div>
