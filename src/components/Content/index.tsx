@@ -1,9 +1,8 @@
-import PersonPage from './../PersonPage';
-import Aside from './../Aside';
-import './styles.sass';
+import PersonPage from '../PersonPage';
+import Aside from '../Aside';
 import { useState } from 'react';
-import { Person, personsInitial } from './../../persons';
-import { isHtmlElement } from './../../types';
+import { Person, personsInitial } from '../../persons';
+import { isHtmlElement } from '../../types';
 
 function Content() {
     const [persons, setPersons] = useState<Person[]>(personsInitial);

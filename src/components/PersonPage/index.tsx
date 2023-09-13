@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Content from './Content';
 import Menu from './Menu';
 import PersonControls from './PersonControls';
-import './styles.sass';
 
 function PersonPage({person}) {
 

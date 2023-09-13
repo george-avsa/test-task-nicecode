@@ -1,0 +1,36 @@
+$box-shadow-10: 0px 1px 4px 0px rgba(19, 19, 19, 0.10)
+$box-shadow-30: 0px 1px 4px 0px rgba(19, 19, 19, 0.30)
+$box-shadow-8: 0px 2px 10px 0px rgba(22, 23, 24, 0.08)
+
+$size-normal: 1rem
+$size-small: .875rem
+$size-light: .75rem
+
+$style-normal: normal
+$style-italic: italic
+
+@mixin white-block($shadow, $padding)
+    padding: $padding
+    border-radius: 4px
+    background: $white
+    box-shadow: $shadow
+    box-sizing: border-box
+
+@mixin content-item()
+
+@mixin font-template($size: $size-normal, $weight: 400, $style: $style-normal)
+    font-family: SF Pro Display
+    font-size: $size
+    font-weight: $weight
+    font-style: $style
+
+// colors
+$white: #FFFFFF
+$white-hover: #F1F2F4
+$light-blue: #4198C5
+$dark-blue: #616F82
+$grey: #CDCDCD
+$grey-background: #F1F2F3
+$black: #161718
+$red: #F00F00
+$black-aplha: rgba(0, 0, 0, .8)

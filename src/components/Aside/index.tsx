@@ -1,6 +1,6 @@
 import ControlPanel from '../ControlPanel';
 import PersonsList from './PersonsList';
-import './styles.sass';
+// import './styles.sass';
 import {Person} from './../../persons';
 import ControlSelection from './../ControlPanel/ControlSelection';
 import { useEffect, useMemo, useState } from 'react';
