@@ -1,4 +1,3 @@
-import './styles.sass'
 import ControlPanelDefault from './ControlPanelDefault';
 import ControlPanelSearch from './ControlPanelSearch';
 import { useMemo, useState } from 'react';

@@ -1,5 +1,3 @@
-import './styles.sass';
-
 function Header() {
     return (
         <header>

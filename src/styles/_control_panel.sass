@@ -1,0 +1,77 @@
+.control-panel
+    @include white-block($box-shadow-10, 10px)
+
+    position: relative
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    max-width: 366px
+    height: 60px
+    box-sizing: border-box
+
+
+    svg
+        fill: $dark-blue
+
+.control-panel__grow
+    flex-grow: 1
+
+.search
+    flex-grow: 1
+    height: 40px
+    padding-left: 35px
+    border-radius: 90px
+
+    border: 1px solid $grey
+    background: $white
+    &:focus
+        outline: 1px solid $black
+
+button
+    border: 0px solid $black
+    &:focus
+        outline: 2px solid $black-aplha
+
+.control-selection
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height:20px
+
+    padding: 0px 10px
+    margin-top: 15px
+
+.control-selection__amount
+    @include font-template($size: $size-light)
+    padding: 2px 6px
+    border-radius: 9px
+    background: $dark-blue
+
+    color: $white
+
+    line-height: 100%
+
+.control-selection__amount--select
+    background: $light-blue
+
+.control-selection__text
+    @include font-template($size: $size-small)
+    color: $dark-blue
+
+    margin: 0px 10px
+
+.control-selection__select
+    @include font-template($size: $size-small)
+    border: 0px solid $black
+    background: transperent
+    cursor: pointer
+    color: $dark-blue 
+
+.control-selection__select:last-child
+    margin-left: 12px
+
+.control-selection__right
+    display: flex
+    align-items: center

@@ -1,5 +1,3 @@
-import './styles.sass'
-
 function Checkbox({className="", checked, onChange=()=>{}, htmlFor}) {
     return (
         <div className="checkbox">

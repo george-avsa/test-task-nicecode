@@ -10,7 +10,7 @@ function PersonItem({
 }) {
     return (
         <div className="persons-list__item" id={person.id} onClick={(e) => handleClick(e)}>
-            {active && <div className="persons-list__active"></div>}
+            {active && <div className="persons-list__item--active"></div>}
             {selectMode && (
                 <Checkbox checked={person.selected} className="person-item__checkbox" htmlFor={person.id}/>
             )}
