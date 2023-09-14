@@ -1,8 +1,8 @@
-import Icon from "./../UI/Icon";
-import {ReactComponent as CameraIcon} from "./../../assets/camera.svg"
-import {ReactComponent as PersonalMeeting} from "./../../assets/personalMeeting.svg"
+import Icon from "./../../UI/Icon";
+import {ReactComponent as CameraIcon} from "./../../../assets/camera.svg"
+import {ReactComponent as PersonalMeeting} from "./../../../assets/personalMeeting.svg"
 import { useEffect } from "react";
-import { dateToFormat } from "./../../fetures/dateToFomat";
+import { dateToFormat } from "./../../../fetures/dateToFomat";
 
 function Consultation({consultations}) {
     useEffect(() => {console.log(consultations)}, [])

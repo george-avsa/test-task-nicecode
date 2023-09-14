@@ -1,9 +1,9 @@
 import { Person } from "persons";
-import {ReactComponent as MoreIcon} from "./../../assets/more.svg"
-import Icon from "./../UI/Icon";
+import {ReactComponent as MoreIcon} from "./../../../assets/more.svg"
+import Icon from "../../UI/Icon";
 import PersonDropdown from "./PersonDropdown";
 import { useEffect, useRef, useState } from "react";
-import { isHtmlElement } from "./../../types";
+import { isHtmlElement } from "../../../types";
 
 function PersonControls({person}:{person:Person}) {
 

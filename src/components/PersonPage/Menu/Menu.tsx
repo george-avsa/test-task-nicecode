@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import MenuDivider from "./MenuDivider";
 import MenuItem from "./MenuItem";
-import Icon from "./../UI/Icon";
-import {ReactComponent as PlusIcon} from './../../assets/smallPlus.svg'
-import { isHtmlElement } from "./../../types";
+import Icon from "./../../UI/Icon";
+import {ReactComponent as PlusIcon} from './../../../assets/smallPlus.svg'
+import { isHtmlElement } from "../../../types";
 
 interface MenuItem {
     name: string,

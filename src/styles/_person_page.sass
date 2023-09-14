@@ -1,11 +1,11 @@
 .person-page
     display: flex
     flex-direction: column
-    width: 794px
     height: 100%
-    padding-left: 30px
+    margin-left: 30px
     min-height: 100%
     box-sizing: border-box
+    flex-grow: 1
 
 .person-page__controls
     @include white-block($box-shadow-10, 10px)
@@ -56,6 +56,7 @@
 
     margin-top: 10px
     padding: 0px 20px 0 10px
+    box-sizing: border-box
 
 .menu__item
     @include font-template($size: $size-small)
@@ -82,6 +83,9 @@
     img
         width: 10px
         height: 10px
+
+    &:hover
+        border: 1.1px solid $light-blue
 
 .person-page__new
     flex-grow: 1
@@ -110,7 +114,6 @@
 .note-item p
     @include font-template($size: $size-small)
     color: $black
-    width: 680px
     line-height: 20px
 
 .node-item__more
@@ -127,6 +130,7 @@
     border-radius: 4px
     padding: 8px 0
     box-sizing: border-box
+    color: $black
     filter: drop-shadow(0px 2px 16px rgba(34, 34, 34, 0.16))
 
 .dropdown__item

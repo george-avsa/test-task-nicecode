@@ -1,6 +1,6 @@
-import Icon from "./../UI/Icon";
-import {ReactComponent as MoreIcon} from "./../../assets/more.svg"
-import { dateToFormat } from "./../../fetures/dateToFomat";
+import Icon from "../../UI/Icon";
+import {ReactComponent as MoreIcon} from "./../../../assets/more.svg"
+import { dateToFormat } from "../../../fetures/dateToFomat";
 
 function NoteItem({note}) {
     return (

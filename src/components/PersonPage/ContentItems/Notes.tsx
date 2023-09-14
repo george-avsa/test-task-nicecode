@@ -1,5 +1,3 @@
-import Icon from "./../UI/Icon";
-import {ReactComponent as MoreIcon} from "./../../assets/more.svg"
 import NoteItem from "./NoteItem";
 
 function Notes({person}) {

@@ -1,10 +1,8 @@
-import Icon from "../UI/Icon";
-import {ReactComponent as CameraIcon} from "./../../assets/video-camera.svg"
-import {ReactComponent as ClockIcon} from "./../../assets/clock.svg"
-import {ReactComponent as CalendarIcon} from "./../../assets/calendar.svg"
-import { useEffect } from "react";
-import { dateToFormat } from "./../../fetures/dateToFomat";
-import { IEvent } from "../../persons";
+import {ReactComponent as CameraIcon} from "./../../../assets/video-camera.svg"
+import {ReactComponent as ClockIcon} from "./../../../assets/clock.svg"
+import {ReactComponent as CalendarIcon} from "./../../../assets/calendar.svg"
+import { dateToFormat } from "./../../../fetures/dateToFomat";
+import { IEvent } from "../../../persons";
 
 function PersonEvents({personEvents}:{personEvents: IEvent[]}) {
 
