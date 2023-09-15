@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 interface Meeting {
     startDatetime: Date,
     endDatetime: Date,
@@ -7,7 +9,8 @@ interface Meeting {
     name: string
 } 
 
-interface Note {
+export interface Note {
+    id: string
     date: Date,
     text: string,
     uploaded: string
@@ -28,18 +31,25 @@ export interface IEvent {
     previewImage: string,
 }
 
-export interface Person {
-    id: string,
-    firstName: string,
-    lastName: string,
-    telegram: boolean,
-    warning: boolean,
-    avatar: string | null,
+// for list in aside block
+export interface PersonListItem {
+    id: string
+    firstName: string
+    lastName: string
+    avatar: string | null
+    telegram: boolean
+    warning: boolean
+    selected: boolean
+}
+
+// for detailed info in 
+export interface Person extends PersonListItem {
+    gender: 'male' | 'female',
+    age: number,
     notes: Note[],
     meetings: Meeting[],
     videos: Video[],
     events: IEvent[],
-    selected: boolean,
 }
 
 export const personsInitial:Person[] = [
@@ -49,14 +59,18 @@ export const personsInitial:Person[] = [
         lastName: 'Рожков',
         telegram: false,
         warning: false,
+        gender:"male",
+age: 30,
         avatar: 'rozhkov_denis.png',
         notes: [
             {
+                id: uuidv4(),
                 date: new Date(2019, 11, 20),
                 text: 'Физические упражнения способствуют активизации мышечных сокращений, кровотока в тканях, снимают отечность, повышают энергетические возможности мышц. Улучшенное питание мышечной ткани ускоряет замещение различных посттравматических дефектов в самих мышцах, костной ткани, связках и сухожилиях.',
                 uploaded: ''
             },
             {
+                id: uuidv4(),
                 date: new Date(2019, 11, 20),
                 text: 'Улучшенное питание мышечной ткани ускоряет замещение различных посттравматических дефектов в самих мышцах, костной ткани, связках и сухожилиях.',
                 uploaded: 'mapNotes.png'
@@ -144,6 +158,8 @@ export const personsInitial:Person[] = [
         lastName: 'Кравцова',
         telegram: true,
         warning: false,
+        gender:"male",
+age: 30,
         avatar: 'kravcova_alexandra.png',
         notes: [],  
         meetings: [],   
@@ -157,6 +173,8 @@ export const personsInitial:Person[] = [
         lastName: 'Кравцова',
         telegram: false,
         warning: true,
+        gender:"male",
+age: 30,
         avatar: 'kravcova_alexandra.png',
         notes: [],  
         meetings: [],   
@@ -170,6 +188,8 @@ export const personsInitial:Person[] = [
         lastName: 'Диброва',
         telegram: false,
         warning: false,
+        gender:"male",
+age: 30,
         avatar: 'dibrova_alevtina.png',
         notes: [],  
         meetings: [],   
@@ -183,6 +203,8 @@ export const personsInitial:Person[] = [
         lastName: 'Иванов',
         telegram: false,
         warning: false,
+        gender:"male",
+age: 30,
         avatar: 'ivanov-dmitriy.png',
         notes: [],  
         meetings: [],   
@@ -196,6 +218,8 @@ export const personsInitial:Person[] = [
         lastName: '',
         telegram: false,
         warning: false,
+        gender:"male",
+age: 30,
         avatar: null,
         notes: [],  
         meetings: [],   
@@ -209,6 +233,8 @@ export const personsInitial:Person[] = [
         lastName: 'Форс',
         telegram: false,
         warning: false,
+        gender:"male",
+age: 30,
         avatar: 'fors_alexandr.png',
         notes: [],  
         meetings: [],   
@@ -222,6 +248,8 @@ export const personsInitial:Person[] = [
         lastName: 'Ахмедов',
         telegram: false,
         warning: false,
+        gender:"male",
+        age: 30,
         avatar: 'ahmed_artur.png',
         notes: [],  
         meetings: [],   
@@ -235,6 +263,8 @@ export const personsInitial:Person[] = [
         lastName: 'Валиева',
         telegram: false,
         warning: false,
+        gender:"male",
+age: 30,
         avatar: 'valieva_rufina.png',
         notes: [],  
         meetings: [],   
@@ -248,6 +278,8 @@ export const personsInitial:Person[] = [
         lastName: 'Валиева',
         telegram: false,
         warning: false,
+        gender:"male",
+age: 30,
         avatar: 'voloshkina_victoria.png',
         notes: [],  
         meetings: [],   
@@ -261,6 +293,8 @@ export const personsInitial:Person[] = [
         lastName: 'Валиева',
         telegram: false,
         warning: false,
+        gender:"male",
+age: 30,
         avatar: 'voloshkina_victoria.png',
         notes: [],  
         meetings: [],   

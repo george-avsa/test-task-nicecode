@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import MenuDivider from "./MenuDivider";
 import MenuItem from "./MenuItem";
 import Icon from "./../../UI/Icon";
@@ -42,10 +42,10 @@ function Menu({personControlsMenu, setPersonControlsMenu}) {
     return (
         <div className="person-page__menu">
             {personControlsMenu.map((menuItem:MenuItem, i:number) => {
-                return <>
-                    <MenuItem active={menuItem.active} handleClickMenu={handleClickMenu} >{menuItem.name}</MenuItem>
+                return <Fragment key={i}>
+                    <MenuItem active={menuItem.active} handleClickMenu={handleClickMenu}>{menuItem.name}</MenuItem>
                     {(i !== personControlsMenu.length - 1) && <MenuDivider />}
-                </>
+                </Fragment>
             }
         )}
         <div className="person-page__new">

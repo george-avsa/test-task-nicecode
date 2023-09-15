@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { dateToFormat } from "./../../../fetures/dateToFomat";
 
 function Consultation({consultations}) {
-    useEffect(() => {console.log(consultations)}, [])
+    
     return (
         <>
             {consultations.map((consultation, i) => (

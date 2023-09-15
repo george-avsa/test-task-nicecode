@@ -1,8 +1,24 @@
 import Header from "./components/Header";
-import Search from "./components/ControlPanel";
 import Content from "./components/Content";
+import { useEffect } from "react";
+import { Provider, useDispatch, useSelector } from "react-redux";
+import store, { State } from "./store";
+import { getPesonsList } from "./store/personList";
+import { getPersonDetails } from "./store/personDetails";
 
 function App() {
+
+    const dispatch = useDispatch<typeof store.dispatch>();
+    const personList = useSelector((state: State) => state.personList);
+
+    useEffect(() => {
+        dispatch(getPesonsList());
+    }, [])
+
+    useEffect(() => {
+        dispatch(getPersonDetails())
+    }, [personList])
+
     return (
         <>
             <Header></Header>

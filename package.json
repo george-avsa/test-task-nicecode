@@ -5,7 +5,7 @@
   "main": "src/index.tsx",
   "proxy": "http://localhost:3000",
   "scripts": {
-    "start": "webpack serve --mode development",
+    "start": "json-server --watch db.json --port 3001 & webpack serve --mode development",
     "build": "webpack --mode production"
   },
   "author": "",
@@ -28,14 +28,16 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "@svgr/webpack": "^8.1.0",
     "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.2.7",
     "asset-loader": "^0.1.7",
     "file-loader": "^6.2.0",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "resolve-url-loader": "^5.0.0"
+    "react-redux": "^8.1.2",
+    "resolve-url-loader": "^5.0.0",
+    "uuid": "^9.0.1"
   }
 }
