@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import Notes from "./Notes";
-import Consultation from "./Consultation";
-import Video from "./Video";
-import PersonEvents from "./PersonEvents";
+import Notes from "./ContentItems/Notes";
+import Consultation from "./ContentItems/Consultation";
+import Video from "./ContentItems/Video";
+import PersonEvents from "./ContentItems/PersonEvents";
 
 function Content({person, personControlsMenu}) {
 

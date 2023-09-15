@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Content from './Content';
-import Menu from './Menu';
-import PersonControls from './PersonControls';
+import PersonControls from './Menu/PersonControls';
+import Menu from './Menu/Menu';
 
 function PersonPage({person}) {
 
