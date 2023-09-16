@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 
 interface Meeting {
-    startDatetime: Date,
-    endDatetime: Date,
+    startDatetime: string,
+    endDatetime: string,
     type: 'online' | 'face-to-face',
     confirmed: boolean
     inProgress: boolean,
@@ -11,15 +11,15 @@ interface Meeting {
 
 export interface Note {
     id: string
-    date: Date,
+    date: string,
     text: string,
     uploaded: string
 }
 
 export interface Video {
     name: string,
-    startDatetime: Date | null,
-    endDatetime: Date | null,
+    startDatetime: string | null,
+    endDatetime: string | null,
     videoSrc: string,
     previewImage: string,
     authorName: string,
@@ -27,7 +27,7 @@ export interface Video {
 
 export interface IEvent {
     name: string,
-    datetime: Date,
+    datetime: string,
     previewImage: string,
 }
 
@@ -65,37 +65,37 @@ age: 30,
         notes: [
             {
                 id: uuidv4(),
-                date: new Date(2019, 11, 20),
+                date: new Date(2019, 11, 20).toString(),
                 text: 'Физические упражнения способствуют активизации мышечных сокращений, кровотока в тканях, снимают отечность, повышают энергетические возможности мышц. Улучшенное питание мышечной ткани ускоряет замещение различных посттравматических дефектов в самих мышцах, костной ткани, связках и сухожилиях.',
                 uploaded: ''
             },
             {
                 id: uuidv4(),
-                date: new Date(2019, 11, 20),
+                date: new Date(2019, 11, 20).toString(),
                 text: 'Улучшенное питание мышечной ткани ускоряет замещение различных посттравматических дефектов в самих мышцах, костной ткани, связках и сухожилиях.',
                 uploaded: 'mapNotes.png'
             }
         ],
         meetings: [
             {
-                startDatetime: new Date(2019, 0, 15, 12, 30),
-                endDatetime: new Date(2019, 0, 15, 13, 0),
+                startDatetime: new Date(2019, 0, 15, 12, 30).toString(),
+                endDatetime: new Date(2019, 0, 15, 13, 0).toString(),
                 type: 'online',
                 confirmed: true,
                 inProgress: true,
                 name: 'Online консультация'
             },
             {
-                startDatetime: new Date(2019, 0, 15, 12, 30),
-                endDatetime: new Date(2019, 0, 15, 13, 0),
+                startDatetime: new Date(2019, 0, 15, 12, 30).toString(),
+                endDatetime: new Date(2019, 0, 15, 13, 0).toString(),
                 type: 'online',
                 confirmed: true,
                 inProgress: false,
                 name: 'Online консультация'
             },
             {
-                startDatetime: new Date(2019, 0, 15, 12, 30),
-                endDatetime: new Date(2019, 0, 15, 13, 0),
+                startDatetime: new Date(2019, 0, 15, 12, 30).toString(),
+                endDatetime: new Date(2019, 0, 15, 13, 0).toString(),
                 type: 'face-to-face',
                 confirmed: false,
                 inProgress: false,
@@ -113,16 +113,16 @@ age: 30,
             },
             {
                 name: 'Разминка для локтевого сустава',
-                startDatetime: new Date(2019, 0, 15, 0, 0),
-                endDatetime: new Date(2019, 0, 22, 0, 0),
+                startDatetime: new Date(2019, 0, 15, 0, 0).toString(),
+                endDatetime: new Date(2019, 0, 22, 0, 0).toString(),
                 videoSrc: '',
                 previewImage: 'razminka.png',
                 authorName: 'Астахова Е.В.'
             },
             {
                 name: 'Разминка для локтевого суставаРазминка для локтевого сустава',
-                startDatetime: new Date(2019, 0, 15, 0, 0),
-                endDatetime: new Date(2019, 0, 22, 0, 0),
+                startDatetime: new Date(2019, 0, 15, 0, 0).toString(),
+                endDatetime: new Date(2019, 0, 22, 0, 0).toString(),
                 videoSrc: '',
                 previewImage: 'razminka-dlya.png',
                 authorName: 'Астахова Е.В.'
@@ -131,22 +131,22 @@ age: 30,
         events: [
             {
                 name: 'Тяга резинки в шаге со сгибанием локтя под 90 градусов',
-                datetime: new Date(2021, 3, 9, 17, 0),
+                datetime: new Date(2021, 3, 9, 17, 0).toString(),
                 previewImage: 'tyaga.png',
             },
             {
                 name: 'Тяга резинки в шаге со сгибанием локтя под 90 градусов',
-                datetime: new Date(2021, 3, 9, 17, 0),
+                datetime: new Date(2021, 3, 9, 17, 0).toString(),
                 previewImage: 'tyaga.png',
             },
             {
                 name: 'Тяга резинки в шаге со сгибанием локтя под 90 градусов',
-                datetime: new Date(2021, 3, 9, 17, 0),
+                datetime: new Date(2021, 3, 9, 17, 0).toString(),
                 previewImage: 'tyaga.png',
             },
             {
                 name: 'Тяга резинки в шаге со сгибанием локтя под 90 градусов',
-                datetime: new Date(2021, 3, 9, 17, 0),
+                datetime: new Date(2021, 3, 9, 17, 0).toString(),
                 previewImage: 'tyaga.png',
             },
         ], 

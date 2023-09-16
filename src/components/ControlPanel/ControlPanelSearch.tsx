@@ -1,24 +1,24 @@
 import Icon from '../UI/Icon';
 import {ReactComponent as SearchIcon} from './../../assets/search.svg';
 import {ReactComponent as CrossIcon} from './../../assets/cross.svg';
-import { useState } from 'react';
 import { isHtmlElement } from './../../types';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from 'store';
+import { setSearch, toggleSearchVisibility } from './../../store/options';
 
-function ControlPanelSearch({
-    setSearchOpened, 
-    setPersons,
-    searchValue,
-    setSearchValue,
-}) {
+function ControlPanelSearch() {
+
+    const searchValue = useSelector((state: RootState) => state.options.search);
+    const dispatch = useDispatch();
 
     const handleClickSearch = () => {
-        setSearchOpened(false);
-        setSearchValue('');
+        dispatch(toggleSearchVisibility());
+        dispatch(setSearch(''));
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (isHtmlElement(e.target)) {
-            setSearchValue(e.target.value);
+            dispatch(setSearch(e.target.value));
         }
     }
 

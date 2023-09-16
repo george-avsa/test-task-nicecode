@@ -2,12 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export interface OptionsState {
     search: string,
-    sort: 'name' | 'surname' | null
+    sort: 'name' | 'surname' | null,
+    selectMode: boolean
+    searchOpened: boolean
 }
 
 const initialState: OptionsState = {
     search: '',
-    sort: null
+    sort: null,
+    selectMode: false,
+    searchOpened: false,
 }
 
 export const optionsSlice = createSlice({
@@ -25,6 +29,14 @@ export const optionsSlice = createSlice({
                 sort = 'surname';
             }
             return {...state, sort};
+        },
+        toggleMode: (state) => {
+            return {...state, selectMode: !state.selectMode}
+        },
+        toggleSearchVisibility: (state) => {
+            return {...state, searchOpened: !state.searchOpened}
         }
     }
-})
+});
+
+export const {setSearch, setSort, toggleMode, toggleSearchVisibility} = optionsSlice.actions;
