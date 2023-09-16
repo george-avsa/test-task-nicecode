@@ -1,11 +1,12 @@
-import { useEffect } from "react";
 import Notes from "./ContentItems/Notes";
 import Consultation from "./ContentItems/Consultation";
 import Video from "./ContentItems/Video";
 import PersonEvents from "./ContentItems/PersonEvents";
+import { useSelector } from "react-redux";
+import { RootState } from "store";
 
-function Content({person, personControlsMenu}) {
-
+function Content({personControlsMenu}) {
+    const person = useSelector((state:RootState) => state.personDetails);
     return (
         <div className="person-page__content">
             {personControlsMenu.find(menu => menu.active).name === 'Заметки' && <Notes person={person}></Notes>}

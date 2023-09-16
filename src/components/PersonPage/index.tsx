@@ -3,7 +3,7 @@ import Content from './Content';
 import PersonControls from './Menu/PersonControls';
 import Menu from './Menu/Menu';
 
-function PersonPage({person}) {
+function PersonPage() {
 
     const [personControlsMenu, setPersonControlsMenu] = useState([
         {name: "Заметки", active: true},
@@ -14,9 +14,9 @@ function PersonPage({person}) {
 
     return (
         <div className="person-page">
-            <PersonControls person={person}></PersonControls>
+            <PersonControls></PersonControls>
             <Menu personControlsMenu={personControlsMenu} setPersonControlsMenu={setPersonControlsMenu} />
-            <Content person={person} personControlsMenu={personControlsMenu}></Content>
+            <Content personControlsMenu={personControlsMenu}></Content>
         </div>
     );
 }

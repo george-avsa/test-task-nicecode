@@ -1,4 +1,4 @@
-type dateFormatter = (format: string, date:Date, additionalDate?:Date) => string
+type dateFormatter = (format: string, date:string, additionalDate?:string) => string
 
 type Months = string[]
 
@@ -17,7 +17,12 @@ const months: Months = [
     'декабря'
 ]
 
-export const dateToFormat:dateFormatter = (format, date, additionalDate) => {
+export const dateToFormat:dateFormatter = (format, dateString, additionalDateString) => {
+    const date = new Date(dateString)
+    let additionalDate: Date;
+    if (additionalDateString) {
+        additionalDate = new Date(additionalDateString);
+    }
     const monthString = (date.getMonth() + 1 < 10) ? `0${date.getMonth() + 1}` : date.getMonth() + 1
     if (format === 'dd.mm.yyyy') {
         return `${date.getDate()}.${monthString}.${date.getFullYear()}`

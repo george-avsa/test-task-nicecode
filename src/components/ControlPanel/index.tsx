@@ -1,28 +1,18 @@
+import { useSelector } from 'react-redux';
 import ControlPanelDefault from './ControlPanelDefault';
 import ControlPanelSearch from './ControlPanelSearch';
-import { useMemo, useState } from 'react';
+import { RootState } from 'store';
 
 
-function ControlPanel({
-    setPersons,
-    searchValue,
-    setSearchValue,
-}) {
+function ControlPanel() {
 
-    const [searchOpened, setSearchOpened] = useState<boolean>(false);
+    const searchOpened = useSelector((state: RootState) => state.options.searchOpened);
 
     return (
         <div className='control-panel'>
             {searchOpened
-                ? <ControlPanelSearch 
-                    setSearchOpened={setSearchOpened}
-                    setPersons={setPersons}
-                    searchValue={searchValue}
-                    setSearchValue={setSearchValue}
-                />
-                : <ControlPanelDefault
-                    setSearchOpened={setSearchOpened}
-                />
+                ? <ControlPanelSearch/>
+                : <ControlPanelDefault/>
             }
         </div>
     );

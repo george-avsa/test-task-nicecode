@@ -18,7 +18,7 @@ export const getPesonsList = createAsyncThunk(
                     warning: personData.warning,
                     selected: personData.selected,
                 }))
-                dispatch(loadClents(personListMinimized))
+                dispatch(setPersons(personListMinimized))
             })
             .catch(response => {
                 console.log(123)
@@ -30,10 +30,10 @@ export const personList = createSlice({
     name: 'personList',
     initialState,
     reducers: {
-        loadClents: (state, {payload}) => {
+        setPersons: (state, {payload}) => {
             return payload
-        }
+        },
     },
 });
 
-export const {loadClents} = personList.actions;
+export const {setPersons} = personList.actions;

@@ -1,17 +1,14 @@
-import { Person } from "persons";
+import { Person, PersonListItem } from "persons";
 import Checkbox from "./../UI/Chekbox"
 import { useEffect, useState } from "react";
 import { isHtmlElement } from "./../../types";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "store";
+import { countSearched, selectPersons } from "./../../store/selectors";
+import { setPersons } from "./../../store/personList";
+import { toggleMode } from "./../../store/options";
 
-interface Props {
-    searchValue: string,
-    selectMode: boolean,
-    persons: Person[],
-    setSelectMode: React.Dispatch<React.SetStateAction<boolean>>
-    setPersons: React.Dispatch<React.SetStateAction<Person[]>>
-}
-
-const countSelected = (persons:Person[]) => {
+const countSelected = (persons:PersonListItem[]) => {
     return persons.reduce((acc:any, person) => {
         if (person.selected) {  
             acc += 1
@@ -20,44 +17,36 @@ const countSelected = (persons:Person[]) => {
     }, 0)
 }
 
-const countSearched = (persons: Person[], searchValue:string) => {
-    return persons.reduce((acc:any, person) => {
-        if (person.lastName.includes(searchValue) 
-        || person.firstName.includes(searchValue)) {
-            acc += 1
-        }
-        return acc
-    }, 0)
-}
+function ControlSelection() {
 
-function ControlSelection({
-    persons,
-    setPersons,
-    selectMode,
-    setSelectMode,
-    searchValue,
-}:Props) {
+    const selectMode = useSelector((state: RootState) => state.options.selectMode);
+    const personAmount = useSelector(countSearched);
+    const searchValue = useSelector((state: RootState) => state.options.search);
+    const persons = useSelector(selectPersons);
+    const dispatch = useDispatch();
 
     const handleClickSelection = () => {
-        setSelectMode(!selectMode)
+        dispatch(toggleMode())
     }
 
     const [allSelected, setAllSelected] = useState<boolean>(false);
 
     const handleChecked = () => {
+        const selectedPersons = persons.map((person:Person) => {
+            return {...person, selected:false}
+        })
         if (allSelected) {
-            setPersons(persons.map((person:Person) => {
-                return {...person, selected:false}
-            }))
+            dispatch(setPersons(selectedPersons))
         }
         setAllSelected(!allSelected);
     }
 
     useEffect(() => {
+        const selectedPersons:PersonListItem[] = persons.map(person => {
+            return {...person, selected: true}
+        })
         if (allSelected) {
-            setPersons(persons.map(person => {
-                return {...person, selected: true}
-            }))
+            dispatch(setPersons(selectedPersons))
         }
     }, [allSelected]);
 
@@ -68,10 +57,11 @@ function ControlSelection({
     }, [persons]);
 
     useEffect(() => {
+        const selectedPersons = persons.map(person => {
+            return {...person, selected: false}
+        })
         if (!selectMode) {
-            setPersons(persons.map(person => {
-                return {...person, selected: false}
-            }))
+            dispatch(setPersons(selectedPersons))
         }
     }, [selectMode])
 
@@ -85,7 +75,7 @@ function ControlSelection({
                     </span>
                 </>}
                 <span className={`control-selection__amount ${selectMode ? 'control-selection__amount--select' : ''}`}>
-                    {selectMode ? countSelected(persons) : (searchValue ? countSearched(persons, searchValue) : persons.length)}
+                    {selectMode ? countSelected(persons) : (searchValue ? personAmount : persons.length)}
                 </span>
             </div>
             <div>

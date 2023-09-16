@@ -19,7 +19,7 @@ export const initialState: Forms = {
     },
     formNote: {
         id: '',
-        date: new Date(),
+        date: new Date().toString(),
         text: '',
         uploaded: ''
     },
