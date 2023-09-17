@@ -1,251 +1,332 @@
-{ "data": [
+{
+  "data": [
     {
-        "id": "denis1",
-        "firstName": "Денис",
-        "lastName": "Рожков",
-        "telegram": false,
-        "warning": false,
-        "gender": "male",
-        "age": 30,
-        "avatar": "rozhkov_denis.png",
-        "notes": [
-            {
-                "id": "1b9dcf25-f958-45a9-8cc9-6506edbdbdde",
-                "date": "2019-12-19T21:00:00.000Z",
-                "text": "Физические упражнения способствуют активизации мышечных сокращений, кровотока в тканях, снимают отечность, повышают энергетические возможности мышц. Улучшенное питание мышечной ткани ускоряет замещение различных посттравматических дефектов в самих мышцах, костной ткани, связках и сухожилиях.",
-                "uploaded": ""
-            },
-            {
-                "id": "b98e2dba-e9a9-4333-a28b-e90c83dfa29a",
-                "date": "2019-12-19T21:00:00.000Z",
-                "text": "Улучшенное питание мышечной ткани ускоряет замещение различных посттравматических дефектов в самих мышцах, костной ткани, связках и сухожилиях.",
-                "uploaded": "mapNotes.png"
-            }
-        ],
-        "meetings": [
-            {
-                "startDatetime": "2019-01-15T09:30:00.000Z",
-                "endDatetime": "2019-01-15T10:00:00.000Z",
-                "type": "online",
-                "confirmed": true,
-                "inProgress": true,
-                "name": "Online консультация"
-            },
-            {
-                "startDatetime": "2019-01-15T09:30:00.000Z",
-                "endDatetime": "2019-01-15T10:00:00.000Z",
-                "type": "online",
-                "confirmed": true,
-                "inProgress": false,
-                "name": "Online консультация"
-            },
-            {
-                "startDatetime": "2019-01-15T09:30:00.000Z",
-                "endDatetime": "2019-01-15T10:00:00.000Z",
-                "type": "face-to-face",
-                "confirmed": false,
-                "inProgress": false,
-                "name": "Личный прием"
-            }
-        ],
-        "videos": [
-            {
-                "name": "Крабик, ходьба в бок в приседе с двумя резинками Крафылвдылд",
-                "startDatetime": null,
-                "endDatetime": null,
-                "videoSrc": "",
-                "previewImage": "krabik.png",
-                "authorName": "Астахова Е.В."
-            },
-            {
-                "name": "Разминка для локтевого сустава",
-                "startDatetime": "2019-01-14T21:00:00.000Z",
-                "endDatetime": "2019-01-21T21:00:00.000Z",
-                "videoSrc": "",
-                "previewImage": "razminka.png",
-                "authorName": "Астахова Е.В."
-            },
-            {
-                "name": "Разминка для локтевого суставаРазминка для локтевого сустава",
-                "startDatetime": "2019-01-14T21:00:00.000Z",
-                "endDatetime": "2019-01-21T21:00:00.000Z",
-                "videoSrc": "",
-                "previewImage": "razminka-dlya.png",
-                "authorName": "Астахова Е.В."
-            }
-        ],
-        "events": [
-            {
-                "name": "Тяга резинки в шаге со сгибанием локтя под 90 градусов",
-                "datetime": "2021-04-09T14:00:00.000Z",
-                "previewImage": "tyaga.png"
-            },
-            {
-                "name": "Тяга резинки в шаге со сгибанием локтя под 90 градусов",
-                "datetime": "2021-04-09T14:00:00.000Z",
-                "previewImage": "tyaga.png"
-            },
-            {
-                "name": "Тяга резинки в шаге со сгибанием локтя под 90 градусов",
-                "datetime": "2021-04-09T14:00:00.000Z",
-                "previewImage": "tyaga.png"
-            },
-            {
-                "name": "Тяга резинки в шаге со сгибанием локтя под 90 градусов",
-                "datetime": "2021-04-09T14:00:00.000Z",
-                "previewImage": "tyaga.png"
-            }
-        ],
-        "selected": false
+      "id": "denis1",
+      "firstName": "Денис",
+      "lastName": "Рожков",
+      "telegram": false,
+      "warning": false,
+      "gender": "male",
+      "age": 30,
+      "avatar": "rozhkov_denis.png",
+      "notes": [
+        {
+          "id": "1b9dcf25-f958-45a9-8cc9-6506edbdbdde",
+          "date": "2019-12-19T21:00:00.000Z",
+          "text": "Физические упражнения способствуют активизации мышечных сокращений, кровотока в тканях, снимают отечность, повышают энергетические возможности мышц. Улучшенное питание мышечной ткани ускоряет замещение различных посттравматических дефектов в самих мышцах, костной ткани, связках и сухожилиях.",
+          "uploaded": ""
+        },
+        {
+          "id": "b98e2dba-e9a9-4333-a28b-e90c83dfa29a",
+          "date": "2019-12-19T21:00:00.000Z",
+          "text": "Улучшенное питание мышечной ткани ускоряет замещение различных посттравматических дефектов в самих мышцах, костной ткани, связках и сухожилиях.",
+          "uploaded": "mapNotes.png"
+        }
+      ],
+      "meetings": [
+        {
+          "startDatetime": "2019-01-15T09:30:00.000Z",
+          "endDatetime": "2019-01-15T10:00:00.000Z",
+          "type": "online",
+          "confirmed": true,
+          "inProgress": true,
+          "name": "Online консультация"
+        },
+        {
+          "startDatetime": "2019-01-15T09:30:00.000Z",
+          "endDatetime": "2019-01-15T10:00:00.000Z",
+          "type": "online",
+          "confirmed": true,
+          "inProgress": false,
+          "name": "Online консультация"
+        },
+        {
+          "startDatetime": "2019-01-15T09:30:00.000Z",
+          "endDatetime": "2019-01-15T10:00:00.000Z",
+          "type": "face-to-face",
+          "confirmed": false,
+          "inProgress": false,
+          "name": "Личный прием"
+        }
+      ],
+      "videos": [
+        {
+          "name": "Крабик, ходьба в бок в приседе с двумя резинками Крафылвдылд",
+          "startDatetime": null,
+          "endDatetime": null,
+          "videoSrc": "",
+          "previewImage": "krabik.png",
+          "authorName": "Астахова Е.В."
+        },
+        {
+          "name": "Разминка для локтевого сустава",
+          "startDatetime": "2019-01-14T21:00:00.000Z",
+          "endDatetime": "2019-01-21T21:00:00.000Z",
+          "videoSrc": "",
+          "previewImage": "razminka.png",
+          "authorName": "Астахова Е.В."
+        },
+        {
+          "name": "Разминка для локтевого суставаРазминка для локтевого сустава",
+          "startDatetime": "2019-01-14T21:00:00.000Z",
+          "endDatetime": "2019-01-21T21:00:00.000Z",
+          "videoSrc": "",
+          "previewImage": "razminka-dlya.png",
+          "authorName": "Астахова Е.В."
+        }
+      ],
+      "events": [
+        {
+          "name": "Тяга резинки в шаге со сгибанием локтя под 90 градусов",
+          "datetime": "2021-04-09T14:00:00.000Z",
+          "previewImage": "tyaga.png"
+        },
+        {
+          "name": "Тяга резинки в шаге со сгибанием локтя под 90 градусов",
+          "datetime": "2021-04-09T14:00:00.000Z",
+          "previewImage": "tyaga.png"
+        },
+        {
+          "name": "Тяга резинки в шаге со сгибанием локтя под 90 градусов",
+          "datetime": "2021-04-09T14:00:00.000Z",
+          "previewImage": "tyaga.png"
+        },
+        {
+          "name": "Тяга резинки в шаге со сгибанием локтя под 90 градусов",
+          "datetime": "2021-04-09T14:00:00.000Z",
+          "previewImage": "tyaga.png"
+        }
+      ],
+      "selected": false
     },
     {
-        "id": "alexnadra1",
-        "firstName": "Александра",
-        "lastName": "Кравцова",
-        "telegram": true,
-        "warning": false,
-        "gender": "male",
-        "age": 30,
-        "avatar": "kravcova_alexandra.png",
-        "notes": [],
-        "meetings": [],
-        "videos": [],
-        "events": [],
-        "selected": false
+      "id": "alexnadra1",
+      "firstName": "Александра",
+      "lastName": "Кравцова",
+      "telegram": true,
+      "warning": false,
+      "gender": "male",
+      "age": 30,
+      "avatar": "kravcova_alexandra.png",
+      "notes": [],
+      "meetings": [],
+      "videos": [],
+      "events": [],
+      "selected": false
     },
     {
-        "id": "alexandra2",
-        "firstName": "Александра",
-        "lastName": "Кравцова",
-        "telegram": false,
-        "warning": true,
-        "gender": "male",
-        "age": 30,
-        "avatar": "kravcova_alexandra.png",
-        "notes": [],
-        "meetings": [],
-        "videos": [],
-        "events": [],
-        "selected": false
+      "id": "alexandra2",
+      "firstName": "Александра",
+      "lastName": "Кравцова",
+      "telegram": false,
+      "warning": true,
+      "gender": "male",
+      "age": 30,
+      "avatar": "kravcova_alexandra.png",
+      "notes": [],
+      "meetings": [],
+      "videos": [],
+      "events": [],
+      "selected": false
     },
     {
-        "id": "alevtina1",
-        "firstName": "Алевтина",
-        "lastName": "Диброва",
-        "telegram": false,
-        "warning": false,
-        "gender": "male",
-        "age": 30,
-        "avatar": "dibrova_alevtina.png",
-        "notes": [],
-        "meetings": [],
-        "videos": [],
-        "events": [],
-        "selected": false
+      "id": "alevtina1",
+      "firstName": "Алевтина",
+      "lastName": "Диброва",
+      "telegram": false,
+      "warning": false,
+      "gender": "male",
+      "age": 30,
+      "avatar": "dibrova_alevtina.png",
+      "notes": [],
+      "meetings": [],
+      "videos": [],
+      "events": [],
+      "selected": false
     },
     {
-        "id": "dmitriy1",
-        "firstName": "Дмитрий",
-        "lastName": "Иванов",
-        "telegram": false,
-        "warning": false,
-        "gender": "male",
-        "age": 30,
-        "avatar": "ivanov-dmitriy.png",
-        "notes": [],
-        "meetings": [],
-        "videos": [],
-        "events": [],
-        "selected": false
+      "id": "dmitriy1",
+      "firstName": "Дмитрий",
+      "lastName": "Иванов",
+      "telegram": false,
+      "warning": false,
+      "gender": "male",
+      "age": 30,
+      "avatar": "ivanov-dmitriy.png",
+      "notes": [],
+      "meetings": [],
+      "videos": [],
+      "events": [],
+      "selected": false
     },
     {
-        "id": "nosikov@list.ru",
-        "firstName": "nosikov@list.ru",
-        "lastName": "",
-        "telegram": false,
-        "warning": false,
-        "gender": "male",
-        "age": 30,
-        "avatar": null,
-        "notes": [],
-        "meetings": [],
-        "videos": [],
-        "events": [],
-        "selected": false
+      "id": "nosikov@list.ru",
+      "firstName": "nosikov@list.ru",
+      "lastName": "",
+      "telegram": false,
+      "warning": false,
+      "gender": "male",
+      "age": 30,
+      "avatar": null,
+      "notes": [],
+      "meetings": [],
+      "videos": [],
+      "events": [],
+      "selected": false
     },
     {
-        "id": "alexander1",
-        "firstName": "Александр",
-        "lastName": "Форс",
-        "telegram": false,
-        "warning": false,
-        "gender": "male",
-        "age": 30,
-        "avatar": "fors_alexandr.png",
-        "notes": [],
-        "meetings": [],
-        "videos": [],
-        "events": [],
-        "selected": false
+      "id": "alexander1",
+      "firstName": "Александр",
+      "lastName": "Форс",
+      "telegram": false,
+      "warning": false,
+      "gender": "male",
+      "age": 30,
+      "avatar": "fors_alexandr.png",
+      "notes": [],
+      "meetings": [],
+      "videos": [],
+      "events": [],
+      "selected": false
     },
     {
-        "id": "artur1",
-        "firstName": "Артур",
-        "lastName": "Ахмедов",
-        "telegram": false,
-        "warning": false,
-        "gender": "male",
-        "age": 30,
-        "avatar": "ahmed_artur.png",
-        "notes": [],
-        "meetings": [],
-        "videos": [],
-        "events": [],
-        "selected": false
+      "id": "artur1",
+      "firstName": "Артур",
+      "lastName": "Ахмедов",
+      "telegram": false,
+      "warning": false,
+      "gender": "male",
+      "age": 30,
+      "avatar": "ahmed_artur.png",
+      "notes": [],
+      "meetings": [],
+      "videos": [],
+      "events": [],
+      "selected": false
     },
     {
-        "id": "rufina1",
-        "firstName": "Руфина",
-        "lastName": "Валиева",
-        "telegram": false,
-        "warning": false,
-        "gender": "male",
-        "age": 30,
-        "avatar": "valieva_rufina.png",
-        "notes": [],
-        "meetings": [],
-        "videos": [],
-        "events": [],
-        "selected": false
+      "id": "rufina1",
+      "firstName": "Руфина",
+      "lastName": "Валиева",
+      "telegram": false,
+      "warning": false,
+      "gender": "male",
+      "age": 30,
+      "avatar": "valieva_rufina.png",
+      "notes": [],
+      "meetings": [],
+      "videos": [],
+      "events": [],
+      "selected": false
     },
     {
-        "id": "victoria1",
-        "firstName": "Виктория Волошина",
-        "lastName": "Валиева",
-        "telegram": false,
-        "warning": false,
-        "gender": "male",
-        "age": 30,
-        "avatar": "voloshkina_victoria.png",
-        "notes": [],
-        "meetings": [],
-        "videos": [],
-        "events": [],
-        "selected": false
+      "id": "victoria1",
+      "firstName": "Виктория Волошина",
+      "lastName": "Валиева",
+      "telegram": false,
+      "warning": false,
+      "gender": "male",
+      "age": 30,
+      "avatar": "voloshkina_victoria.png",
+      "notes": [],
+      "meetings": [],
+      "videos": [],
+      "events": [],
+      "selected": false
     },
     {
-        "id": "victoria2",
-        "firstName": "Виктория Волошина",
-        "lastName": "Валиева",
-        "telegram": false,
-        "warning": false,
-        "gender": "male",
-        "age": 30,
-        "avatar": "voloshkina_victoria.png",
-        "notes": [],
-        "meetings": [],
-        "videos": [],
-        "events": [],
-        "selected": false
+      "id": "victoria2",
+      "firstName": "Виктория Волошина",
+      "lastName": "Валиева",
+      "telegram": false,
+      "warning": false,
+      "gender": "male",
+      "age": 30,
+      "avatar": "voloshkina_victoria.png",
+      "notes": [],
+      "meetings": [],
+      "videos": [],
+      "events": [],
+      "selected": false
+    },
+    {
+      "id": "alexnadra3",
+      "firstName": "Александр",
+      "lastName": "Кравцова",
+      "telegram": true,
+      "warning": false,
+      "gender": "male",
+      "age": 30,
+      "avatar": "kravcova_alexandra.png",
+      "notes": [],
+      "meetings": [],
+      "videos": [],
+      "events": [],
+      "selected": false
+    },
+    {
+      "firstName": "Денисc",
+      "lastName": "Рожков",
+      "telegram": false,
+      "warning": false,
+      "id": "0c0cbca8-62d9-4bf5-84d0-6b8ada2c6142",
+      "avatar": null
+    },
+    {
+      "firstName": "Денисc",
+      "lastName": "Рожков",
+      "telegram": false,
+      "warning": false,
+      "id": "bbc3b184-03ee-4934-9d44-76ace683a9c9",
+      "avatar": null
+    },
+    {
+      "firstName": "Денисв",
+      "lastName": "Рожков",
+      "telegram": false,
+      "warning": false,
+      "id": "dc40d342-44ba-460b-8ee3-35439b11ec2e",
+      "avatar": null
+    },
+    {
+      "firstName": "Денисд",
+      "lastName": "Рожков",
+      "telegram": false,
+      "warning": false,
+      "id": "ecdb4638-f4c8-44fa-b458-c7922866824d",
+      "avatar": null
+    },
+    {
+      "firstName": "Денисk",
+      "lastName": "Рожков",
+      "telegram": false,
+      "warning": false,
+      "id": "ef563caf-80f7-4903-bc8c-f27ab55aceee",
+      "avatar": null
+    },
+    {
+      "firstName": "Денисl",
+      "lastName": "Рожков",
+      "telegram": false,
+      "warning": false,
+      "id": "12197a78-3712-41c0-81e2-172ca1da9f52",
+      "avatar": null
+    },
+    {
+      "firstName": "Денисl",
+      "lastName": "Рожков",
+      "telegram": false,
+      "warning": false,
+      "id": "ed85dc08-f840-47d1-978b-3adde629a5b4",
+      "avatar": null
+    },
+    {
+      "firstName": "Денисl",
+      "lastName": "Рожков",
+      "telegram": false,
+      "warning": false,
+      "id": "1ec29a43-8775-4261-a034-c48bc4a3b02c",
+      "avatar": null
     }
-]}
+  ]
+}

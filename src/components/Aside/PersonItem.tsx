@@ -15,6 +15,7 @@ function PersonItem({
     const selectMode = useSelector((state: RootState) => state.options.selectMode);
 
     const persons = useSelector(selectPersons);
+    const allPersons = useSelector((state: RootState) => state.personList);
     const dispatch = useDispatch<typeof store.dispatch>();
 
     // слушатель выбора нового активного пользователя
@@ -42,7 +43,7 @@ function PersonItem({
                 }
             } else {
                 // если поля можно выбрать, тогда при клике будет меняться выбор person
-                const activePersons = persons.map(person => {
+                const activePersons = allPersons.map(person => {
                     if (person.id === id) {
                         return {...person, selected: !person.selected}
                     }

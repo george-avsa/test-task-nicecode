@@ -1,4 +1,4 @@
-function Checkbox({className="", checked, onChange=()=>{}, htmlFor}) {
+function Checkbox({className="", checked, onChange=(e)=>{}, htmlFor, label=''}) {
     return (
         <div className="checkbox">
             <input 
@@ -8,7 +8,7 @@ function Checkbox({className="", checked, onChange=()=>{}, htmlFor}) {
                 type="checkbox" 
                 id={htmlFor}
             />
-            <label htmlFor={htmlFor}></label>
+            <label htmlFor={htmlFor}>{label}</label>
         </div>
     );
 }

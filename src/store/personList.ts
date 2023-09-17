@@ -1,6 +1,10 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { AsyncThunk, AsyncThunkOptions, Store, ThunkAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { Person, PersonListItem } from "persons";
+import { AppDispatch, RootState } from "store";
+import {v4 as uuid} from 'uuid';
+import { resetFields } from "./forms";
+import { setModal } from "./options";
 
 const initialState:Array<PersonListItem> = [];
 
@@ -26,6 +30,44 @@ export const getPesonsList = createAsyncThunk(
     }
 )
 
+export const postPerson = createAsyncThunk<
+    void,
+    string,
+    {
+        dispatch: AppDispatch
+        state: RootState
+    }
+>(
+    'personList/addPerson',
+    async (payload, {getState, dispatch}) => {
+        const state = getState();
+        const body = {...state.forms.formPerson};
+        if (payload) {
+            return axios.patch(`http://localhost:3001/data/${payload}`, body)
+            .then(response => {
+                if (response.status === 200) {
+                        dispatch(updatePerson({...body}));
+                        dispatch(resetFields('formPerson'));
+                        dispatch(setModal({type: '', closed: true}))
+                    }
+                })
+        } else {
+            let id = uuid();
+            body.id = id;
+            body.avatar = null;
+            return axios.post('http://localhost:3001/data', body)
+                .then(response => {
+                    if (JSON.stringify(response.data) === JSON.stringify(body)) {
+                        dispatch(addPerson(response.data));
+                        dispatch(resetFields('formPerson'));
+                        dispatch(setModal({type: '', closed: true}))
+                    }
+                })
+            .catch()
+        }
+    }
+)
+
 export const personList = createSlice({
     name: 'personList',
     initialState,
@@ -33,7 +75,19 @@ export const personList = createSlice({
         setPersons: (state, {payload}) => {
             return payload
         },
+        addPerson: (state, {payload}) => {
+            return [...state, payload];
+        },
+        updatePerson: (state, {payload}) => {
+            const newPersonList = state.map(person => {
+                if (person.id === payload.id) {
+                    return {...person, ...payload}
+                } 
+                return person
+            })
+            return newPersonList;
+        }
     },
 });
 
-export const {setPersons} = personList.actions;
+export const {setPersons, addPerson, updatePerson} = personList.actions;

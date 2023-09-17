@@ -5,6 +5,7 @@ import { isHtmlElement } from './../../types';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'store';
 import { setSearch, toggleSearchVisibility } from './../../store/options';
+import Input from './../../components/UI/Input';
 
 function ControlPanelSearch() {
 
@@ -25,7 +26,7 @@ function ControlPanelSearch() {
     return (
         <>
             <SearchIcon className='search--icon'/>
-            <input className='search' type="text" value={searchValue} onChange={handleChange} />
+            <Input value={searchValue} handleChange={handleChange} />
             <Icon  onClick={handleClickSearch}><CrossIcon /></Icon>
         </>
     );
