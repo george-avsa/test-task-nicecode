@@ -1,7 +1,6 @@
 import { Person, PersonListItem } from "persons";
 import Checkbox from "./../UI/Chekbox"
 import { useEffect, useState } from "react";
-import { isHtmlElement } from "./../../types";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "store";
 import { countSearched, selectPersons } from "./../../store/selectors";
@@ -23,6 +22,7 @@ function ControlSelection() {
     const personAmount = useSelector(countSearched);
     const searchValue = useSelector((state: RootState) => state.options.search);
     const persons = useSelector(selectPersons);
+    const allPersons = useSelector((state: RootState) => state.personList);
     const dispatch = useDispatch();
 
     const handleClickSelection = () => {
@@ -57,7 +57,8 @@ function ControlSelection() {
     }, [persons]);
 
     useEffect(() => {
-        const selectedPersons = persons.map(person => {
+        
+        const selectedPersons = allPersons.map(person => {
             return {...person, selected: false}
         })
         if (!selectMode) {

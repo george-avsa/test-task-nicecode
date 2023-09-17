@@ -1,10 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+interface FormOption {
+    closed: boolean,
+    type: 'formPerson' | 'formNote' | null
+}
+
 export interface OptionsState {
     search: string,
     sort: 'name' | 'surname' | null,
-    selectMode: boolean
-    searchOpened: boolean
+    selectMode: boolean,
+    searchOpened: boolean,
+    form: FormOption
 }
 
 const initialState: OptionsState = {
@@ -12,6 +18,10 @@ const initialState: OptionsState = {
     sort: null,
     selectMode: false,
     searchOpened: false,
+    form: {
+        closed: true,
+        type: null
+    }
 }
 
 export const optionsSlice = createSlice({
@@ -35,8 +45,11 @@ export const optionsSlice = createSlice({
         },
         toggleSearchVisibility: (state) => {
             return {...state, searchOpened: !state.searchOpened}
+        },
+        setModal: (state, {payload}) => {
+            return {...state, form: payload}
         }
     }
 });
 
-export const {setSearch, setSort, toggleMode, toggleSearchVisibility} = optionsSlice.actions;
+export const {setSearch, setSort, toggleMode, toggleSearchVisibility, setModal} = optionsSlice.actions;
