@@ -19,7 +19,7 @@ function App() {
 
     useEffect(() => {
         dispatch(getPersonDetails('denis1'))
-    }, [personList])
+    }, []);
 
     return (
         <>

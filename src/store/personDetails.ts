@@ -23,6 +23,7 @@ export const getPersonDetails = createAsyncThunk(
     async (payload:string, {dispatch}) => {
         return axios.get(`http://localhost:3001/data?id=${payload}`)
             .then(response => {
+                console.log(response.data[0])
                 dispatch(setPersonDetails(response.data[0]))
             })
             .catch()
