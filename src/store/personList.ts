@@ -4,7 +4,7 @@ import { Person, PersonListItem } from "persons";
 import { AppDispatch, RootState } from "store";
 import {v4 as uuid} from 'uuid';
 import { resetFields } from "./forms";
-import { setLogger, setModal } from "./options";
+import { setLogger, setModal, toggleMode } from "./options";
 import { getPersonDetails, setPersonDetails } from "./personDetails";
 
 const initialState:Array<PersonListItem> = [];
@@ -98,18 +98,56 @@ export const deletePerson = createAsyncThunk<
                     dispatch(setModal({type: '', closed: true}))
                     const newPersonList = [...getState().personList]
                         .filter(person => {
-                            if (person.id === response.data.id) {
+                            if (person.id === payload) {
                                 return false;
                             }
                             return true;
                         })
-                    dispatch(setPersons(newPersonList))
+                    console.log(newPersonList)
                     dispatch(getPersonDetails(newPersonList[0].id))
+                    dispatch(setPersons(newPersonList))
                     dispatch(setLogger('success'));
                 }
             })
     }
 );
+
+export const deleteFewPersons = createAsyncThunk<
+    void,
+    number,
+    {
+        state: RootState,
+        dispatch: AppDispatch
+    }
+>(
+    'personList/deleteFewPersons',
+    async (payload, {dispatch, getState}) => {
+        const persons:PersonListItem[] = getState().personList;
+        const selectedPersons = persons.filter(person => person.selected)
+        Promise.all(
+            selectedPersons.map(
+                async(person: PersonListItem) => {
+                    return axios.delete(`http://localhost:3001/data/${person.id}`)
+                        .then(response => response.data)
+                        .catch(error => {
+                            console.error(error);
+                            dispatch(setLogger('error'))
+                        })
+                })
+        )
+        .then((values) => {
+            dispatch(setLogger('success'));
+            const notDeleted = persons.filter(person => !selectedPersons.includes(person));
+            console.log(notDeleted)
+            dispatch(setPersons(notDeleted));
+            dispatch(toggleMode())
+            const selectedById = selectedPersons.map(person => person.id);
+            if (selectedById.includes(getState().personDetails.id)) {
+                dispatch(getPersonDetails(notDeleted[0].id));
+            }
+        })
+    }
+)
 
 export const personList = createSlice({
     name: 'personList',

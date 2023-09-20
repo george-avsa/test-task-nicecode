@@ -2,10 +2,11 @@ import { Person, PersonListItem } from "persons";
 import Checkbox from "./../UI/Chekbox"
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "store";
+import { AppDispatch, RootState } from "store";
 import { countSearched, selectPersons } from "./../../store/selectors";
-import { setPersons } from "./../../store/personList";
+import { deleteFewPersons, setPersons } from "./../../store/personList";
 import { toggleMode } from "./../../store/options";
+import Dropdown from "./../UI/Dropdown";
 
 const countSelected = (persons:PersonListItem[]) => {
     return persons.reduce((acc:any, person) => {
@@ -23,7 +24,7 @@ function ControlSelection() {
     const searchValue = useSelector((state: RootState) => state.options.search);
     const persons = useSelector(selectPersons);
     const allPersons = useSelector((state: RootState) => state.personList);
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
 
     const handleClickSelection = () => {
         dispatch(toggleMode())
@@ -66,6 +67,7 @@ function ControlSelection() {
         }
     }, [selectMode])
 
+
     return (
         <div className="control-selection">
             <div className="control-selection__right">
@@ -80,8 +82,14 @@ function ControlSelection() {
                 </span>
             </div>
             <div>
-                {selectMode && <span className="control-selection__select">Действия</span>}
-                <span className="control-selection__select" onClick={() => handleClickSelection()}>{!selectMode ? 'Выбрать' : 'Отменить'}</span>
+                {selectMode && <span className="control-selection__select" onClick={() => dispatch(deleteFewPersons(2))}>Удалить</span>}
+                <span 
+                    className="control-selection__select" 
+                    onClick={() => handleClickSelection()}
+                >
+                    {!selectMode ? 'Выбрать' : 'Отменить'}
+                    {/* <Dropdown items={[]}></Dropdown> */}
+                </span>
             </div>
         </div>
     );

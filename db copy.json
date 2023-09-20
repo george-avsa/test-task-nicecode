@@ -2,7 +2,7 @@
   "data": [
     {
       "id": "denis1",
-      "firstName": "Денис",
+      "firstName": "Денисc",
       "lastName": "Рожков",
       "telegram": false,
       "warning": false,
@@ -263,6 +263,32 @@
       "videos": [],
       "events": [],
       "selected": false
+    },
+    {
+      "id": "4ee0e1d2-4b10-4b39-9bfa-39131743f388",
+      "firstName": "fkdlfkl",
+      "lastName": "fgklgf",
+      "avatar": null,
+      "telegram": false,
+      "warning": false,
+      "selected": false,
+      "notes": [],
+      "meetings": [],
+      "videos": [],
+      "events": []
+    },
+    {
+      "id": "2088ccf2-b9bf-46eb-9960-9330e272da84",
+      "firstName": "krdlkl",
+      "lastName": "klgfkl",
+      "avatar": null,
+      "telegram": false,
+      "warning": false,
+      "selected": false,
+      "notes": [],
+      "meetings": [],
+      "videos": [],
+      "events": []
     }
   ]
 }
