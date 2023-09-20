@@ -21,7 +21,8 @@
     flex-direction: column
 
     button
-        height: 30px
+        margin: 40px auto 0 auto
+        width: 300px
         border-radius: 4px
 
 .modal__input
@@ -37,3 +38,31 @@
     
 .modal__form .checkbox
     margin-top: 10px
+
+.modal__title
+    font-size: 20px
+    margin: 0 auto
+
+.modal label::before
+    margin-right: 10px
+    margin-top: 0px
+
+.modal button
+    margin-top: 10px
+
+.modal__prompt
+    padding: 10px 20px 
+    box-sizing: border-box
+    max-width: 400px
+
+    p
+        line-height: 150%
+        text-align: center
+
+.modal__buttons
+    margin-top: 20px
+    display: flex
+    justify-content: center
+
+    button:not(:first-child)
+        margin-left: 20px

@@ -1,8 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 interface FormOption {
     closed: boolean,
-    type: 'formPerson' | 'formNote' | null
+    type: 'formPerson' | 'formNote' | 'promptDelete' | null
 }
 
 export interface OptionsState {
@@ -10,7 +10,8 @@ export interface OptionsState {
     sort: 'name' | 'surname' | null,
     selectMode: boolean,
     searchOpened: boolean,
-    form: FormOption
+    form: FormOption,
+    logger: string
 }
 
 const initialState: OptionsState = {
@@ -21,7 +22,8 @@ const initialState: OptionsState = {
     form: {
         closed: true,
         type: null
-    }
+    },
+    logger: ''
 }
 
 export const optionsSlice = createSlice({
@@ -48,8 +50,11 @@ export const optionsSlice = createSlice({
         },
         setModal: (state, {payload}) => {
             return {...state, form: payload}
+        },
+        setLogger: (state, {payload}) => {
+            return {...state, logger: payload}
         }
     }
 });
 
-export const {setSearch, setSort, toggleMode, toggleSearchVisibility, setModal} = optionsSlice.actions;
+export const {setSearch, setSort, toggleMode, toggleSearchVisibility, setModal, setLogger} = optionsSlice.actions;

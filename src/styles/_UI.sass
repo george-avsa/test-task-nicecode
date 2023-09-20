@@ -65,3 +65,28 @@
   left: 29px
   z-index: 100
   color: $dark-blue
+
+.logger
+  @include white-block($padding: 10px 20px)
+
+  position: fixed
+  bottom: 30px
+  right: 30px
+  color: #fff
+  cursor: pointer
+
+  &.logger--error
+    background: $red
+
+  &.logger--success
+    background: $green
+
+.button
+  @include white-block($box-shadow-10, 10px 20px)
+
+.button--grey
+  background: $grey
+
+.button--red
+  background: $red
+  color: $white
