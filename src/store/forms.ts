@@ -78,8 +78,8 @@ export const formsSlice = createSlice({
         loadFormValues: (state, {payload}) => {
             console.log(payload.type, payload.values)
             state[payload.type] = {...payload.values}
-        }
+        },
     }
 })
 
-export const {setInputValue, resetFields, loadFormValues} = formsSlice.actions;
+export const {setInputValue, resetFields, loadFormValues, } = formsSlice.actions;

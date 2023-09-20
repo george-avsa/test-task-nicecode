@@ -3,6 +3,7 @@ import PersonForm from "./PersonForm";
 import { RootState } from "./../../store";
 import { setModal } from "./../../store/options";
 import { resetFields } from "./../../store/forms";
+import PersonDelete from "./PersonDelete";
 
 function Modal() {
     const formType = useSelector((state: RootState) => state.options.form.type);
@@ -20,6 +21,7 @@ function Modal() {
         <div className="modal-wrapper" onClick={handleClickWrapper}>
             <div className="modal">
                 {(formType === 'formPerson') && <PersonForm></PersonForm>}
+                {(formType === 'promptDelete') && <PersonDelete></PersonDelete>}
             </div>
         </div>
     );

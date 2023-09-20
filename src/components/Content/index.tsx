@@ -1,5 +1,6 @@
 import PersonPage from '../PersonPage';
 import Aside from '../Aside';
+import Logger from './../../components/UI/Logger';
 
 function Content() {
 
@@ -8,6 +9,7 @@ function Content() {
             <div className="content">
                 <Aside></Aside>
                 <PersonPage></PersonPage>
+                <Logger></Logger>
             </div>
         </div>
     );

@@ -14,14 +14,12 @@ $style-italic: italic
 
 
 // mixins
-@mixin white-block($shadow: $box-shadow-10, $padding)
+@mixin white-block($shadow: $box-shadow-10, $padding, $back: $white)
     padding: $padding
     border-radius: 4px
-    background: $white
+    background: $back
     box-shadow: $shadow
     box-sizing: border-box
-
-@mixin content-item()
 
 @mixin font-template($size: $size-normal, $weight: 400, $style: $style-normal)
     font-family: SF Pro Display
@@ -42,3 +40,4 @@ $black-aplha: rgba(0, 0, 0, .8)
 $black-aplha-50: rgba(0, 0, 0, .8)
 $orange: #EC8532
 $blue-telegram: #4198C5
+$green: #5CEA38
