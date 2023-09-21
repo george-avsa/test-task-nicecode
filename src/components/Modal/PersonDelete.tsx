@@ -4,6 +4,7 @@ import { AppDispatch, RootState } from "./../../store";
 import { isHtmlElement } from "./../../types";
 import { setModal } from "./../../store/options";
 import { deletePerson } from "./../../store/personList";
+import { useEffect } from "react";
 
 function PersonDelete() {
     const activePerson = useSelector((state: RootState) => state.personDetails);

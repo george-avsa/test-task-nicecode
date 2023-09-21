@@ -67,6 +67,9 @@ function ControlSelection() {
         }
     }, [selectMode])
 
+    const selectedLength = useSelector((state: RootState) => {
+        return state.personList.filter(person => person.selected).length
+    })
 
     return (
         <div className="control-selection">
@@ -82,7 +85,8 @@ function ControlSelection() {
                 </span>
             </div>
             <div>
-                {selectMode && <span className="control-selection__select" onClick={() => dispatch(deleteFewPersons(2))}>Удалить</span>}
+                
+                {selectMode && !!selectedLength && <span className="control-selection__select" onClick={() => dispatch(deleteFewPersons(2))}>Удалить</span>}
                 <span 
                     className="control-selection__select" 
                     onClick={() => handleClickSelection()}

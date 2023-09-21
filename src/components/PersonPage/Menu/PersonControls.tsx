@@ -43,7 +43,7 @@ function PersonControls() {
                     <span className="person-page__description">30 лет, муж</span>
                 </div>
                 <Icon className="person-page__more" dropdownRef={dropdownRef}>
-                    {dropdown && <PersonDropdown />}
+                    {dropdown && <PersonDropdown setDropdown={setDropdown} />}
                     <MoreIcon />
                 </Icon>
             </>

@@ -5,18 +5,11 @@ import Menu from './Menu/Menu';
 
 function PersonPage() {
 
-    const [personControlsMenu, setPersonControlsMenu] = useState([
-        {name: "Заметки", active: true},
-        {name: "Консультации", active: false},
-        {name: "Видео", active: false},
-        {name: "Мероприятия", active: false},
-    ]);
-
     return (
         <div className="person-page">
             <PersonControls></PersonControls>
-            <Menu personControlsMenu={personControlsMenu} setPersonControlsMenu={setPersonControlsMenu} />
-            <Content personControlsMenu={personControlsMenu}></Content>
+            <Menu/>
+            <Content></Content>
         </div>
     );
 }
