@@ -3,10 +3,11 @@ function Input({
     handleChange,
     className='',
     placeholder='',
-    name=''
+    name='',
+    type='text'
 }) {
     return (
-        <input name={name} className={`search ${className}`} type="text" value={value} onChange={handleChange} placeholder={placeholder} />
+        <input name={name} className={`search ${className}`} type={type} value={value} onChange={handleChange} placeholder={placeholder} />
     );
 }
 

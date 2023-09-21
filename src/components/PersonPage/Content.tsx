@@ -5,8 +5,9 @@ import PersonEvents from "./ContentItems/PersonEvents";
 import { useSelector } from "react-redux";
 import { RootState } from "store";
 
-function Content({personControlsMenu}) {
+function Content() {
     const person = useSelector((state:RootState) => state.personDetails);
+    const personControlsMenu = useSelector((state: RootState) => state.options.personControlsMenu);
     return (
         <div className="person-page__content">
             {personControlsMenu.find(menu => menu.active).name === 'Заметки' && <Notes person={person}></Notes>}

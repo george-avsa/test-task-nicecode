@@ -1,17 +1,20 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loadPersonToForm } from "./../../../store/forms";
-import store, { AppDispatch } from "./../../../store";
+import store, { AppDispatch, RootState } from "./../../../store";
 import { setModal } from "./../../../store/options";
+import { useEffect } from "react";
 
-function PersonDropdown() {
+function PersonDropdown({setDropdown}) {
 
     const dispatch = useDispatch<AppDispatch>();
     const handleClickChange = () => {
         dispatch(loadPersonToForm(0))
+        setDropdown(false)
     }
     
     const handleClickDelete = () => {
         dispatch(setModal({type: 'promptDelete', closed: false}))
+        setDropdown(false)
     }
 
     return (

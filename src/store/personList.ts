@@ -52,6 +52,7 @@ export const postPerson = createAsyncThunk<
                 dispatch(setModal({type: '', closed: true}))
                 if (response.status.toString().startsWith('2')) {
                     dispatch(updatePerson({...body}));
+                    dispatch(setPersonDetails({...state.personDetails, ...state.forms.formPerson}))
                     dispatch(setLogger('success'))
                 } else {
                     dispatch(setLogger('error'))

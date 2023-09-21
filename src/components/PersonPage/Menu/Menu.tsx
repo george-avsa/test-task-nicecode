@@ -4,15 +4,20 @@ import MenuItem from "./MenuItem";
 import Icon from "./../../UI/Icon";
 import {ReactComponent as PlusIcon} from './../../../assets/smallPlus.svg'
 import { isHtmlElement } from "../../../types";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "./../../../store";
+import { setPersonControlsMenu } from "./../../../store/options";
 
 interface MenuItem {
     name: string,
     active: boolean
 }
 
-function Menu({personControlsMenu, setPersonControlsMenu}) {
+function Menu() {
 
     const [buttonName, setButtonName] = useState('Новая заметка');
+    const dispatch = useDispatch();
+    const personControlsMenu = useSelector((state: RootState) => state.options.personControlsMenu);
 
     useEffect(() => {
         const name = personControlsMenu.find(menuItem => menuItem.active).name;
@@ -30,12 +35,12 @@ function Menu({personControlsMenu, setPersonControlsMenu}) {
     const handleClickMenu = (e:React.MouseEvent<HTMLSpanElement>) => {
         const clickedElement = e.target;
         if (isHtmlElement(clickedElement)) {
-            setPersonControlsMenu(personControlsMenu.map((menuItem:MenuItem) => {
+            dispatch(setPersonControlsMenu(personControlsMenu.map((menuItem:MenuItem) => {
                 if (menuItem?.name === clickedElement?.innerText) {
                     return {...menuItem, active: true}
                 }
                 return {...menuItem, active: false}
-            }))
+            })))
         }
     }
 

@@ -5,6 +5,11 @@ interface FormOption {
     type: 'formPerson' | 'formNote' | 'promptDelete' | null
 }
 
+interface personControlsMenu {
+    name: string,
+    active: boolean,
+}
+
 export interface OptionsState {
     search: string,
     sort: 'name' | 'surname' | null,
@@ -12,6 +17,7 @@ export interface OptionsState {
     searchOpened: boolean,
     form: FormOption,
     logger: string
+    personControlsMenu: personControlsMenu[]
 }
 
 const initialState: OptionsState = {
@@ -20,10 +26,16 @@ const initialState: OptionsState = {
     selectMode: false,
     searchOpened: false,
     form: {
-        closed: true,
-        type: null
+        closed: false,
+        type: 'formNote'
     },
-    logger: ''
+    logger: '',
+    personControlsMenu: [
+        {name: "Заметки", active: true},
+        {name: "Консультации", active: false},
+        {name: "Видео", active: false},
+        {name: "Мероприятия", active: false},
+    ]
 }
 
 export const optionsSlice = createSlice({
@@ -53,8 +65,19 @@ export const optionsSlice = createSlice({
         },
         setLogger: (state, {payload}) => {
             return {...state, logger: payload}
+        },
+        setPersonControlsMenu: (state, {payload}) => {
+            return {...state, personControlsMenu: payload};
         }
     }
 });
 
-export const {setSearch, setSort, toggleMode, toggleSearchVisibility, setModal, setLogger} = optionsSlice.actions;
+export const {
+    setSearch,
+    setSort,
+    toggleMode,
+    toggleSearchVisibility,
+    setModal,
+    setLogger,
+    setPersonControlsMenu,
+} = optionsSlice.actions;
