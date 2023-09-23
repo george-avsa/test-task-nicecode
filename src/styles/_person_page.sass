@@ -105,6 +105,8 @@
 
 .note-item__text
     display: flex
+    p
+        flex-grow: 1
 
 .note-item__time
     float: left
@@ -121,9 +123,10 @@
     margin-left: 20px!important
     background: transparent!important
     &:hover
-        color: $dark-blue
+        color: $dark-blue!important
     svg
-        fill: none
+        fill: currentColor!important
+        margin-top: -10px!important
 
 .person-page__dropdown
     position: absolute

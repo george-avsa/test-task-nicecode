@@ -48,7 +48,7 @@ export const postPerson = createAsyncThunk<
         if (payload) {
             return axios.patch(`http://localhost:3001/data/${payload}`, body)
             .then(response => {
-                dispatch(resetFields('formPerson'));
+                dispatch(resetFields());
                 dispatch(setModal({type: '', closed: true}))
                 if (response.status.toString().startsWith('2')) {
                     dispatch(updatePerson({...body}));
@@ -72,7 +72,7 @@ export const postPerson = createAsyncThunk<
                 }).then(response => {
                     if (response.status.toString().startsWith('2')) {
                         dispatch(addPerson(response.data));
-                        dispatch(resetFields('formPerson'));
+                        dispatch(resetFields());
                         dispatch(setModal({type: '', closed: true}))
                         dispatch(setLogger('success'))
                     } else {

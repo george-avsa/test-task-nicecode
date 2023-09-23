@@ -33,6 +33,34 @@ export const loadPersonToForm = createAsyncThunk<
     }
 )
 
+export const loadNoteToForm = createAsyncThunk<
+    void,
+    string,
+    {
+        state: RootState,
+        dispatch: AppDispatch
+    }
+>(
+    'forms/loadNoteToForm',
+    async (payload, {getState, dispatch}) => {
+        const note: Note = getState().personDetails.notes
+            .find(note => note.id === payload);
+        const {
+            id,
+            date,
+            text,
+        } = note;
+        
+        dispatch(loadFormValues({type: 'formNote', values: {
+            id,
+            date,
+            text,
+            uploaded: '',
+        }}))
+        dispatch(setModal({closed: false, type:'formNote'}))
+    }
+)
+
 interface Forms {
     formPerson: PersonListItem,
     formNote: Note,
@@ -70,10 +98,8 @@ export const formsSlice = createSlice({
                 state[payload.form][payload.type] = payload.value
             }
         },
-        resetFields: (state, {payload}) => {
-            return {
-                ...state, [payload]: initialState[payload]
-            }
+        resetFields: (state) => {
+            return initialState
         },
         loadFormValues: (state, {payload}) => {
             console.log(payload.type, payload.values)

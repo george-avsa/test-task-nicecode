@@ -2,7 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 interface FormOption {
     closed: boolean,
-    type: 'formPerson' | 'formNote' | 'promptDelete' | null
+    type: 'formPerson' | 'formNote' | 'promptDeletePerson' | 'promptDeleteNote' | null,
+    idToManipulate: string
 }
 
 interface personControlsMenu {
@@ -26,8 +27,9 @@ const initialState: OptionsState = {
     selectMode: false,
     searchOpened: false,
     form: {
-        closed: false,
-        type: 'formNote'
+        closed: true,
+        type: 'formNote',
+        idToManipulate: ''
     },
     logger: '',
     personControlsMenu: [
@@ -61,7 +63,8 @@ export const optionsSlice = createSlice({
             return {...state, searchOpened: !state.searchOpened}
         },
         setModal: (state, {payload}) => {
-            return {...state, form: payload}
+            const id = payload.idToManipulate || '';
+            return {...state, form: {...payload, idToManipulate: id}}
         },
         setLogger: (state, {payload}) => {
             return {...state, logger: payload}

@@ -6,7 +6,7 @@ import {ReactComponent as PlusIcon} from './../../../assets/smallPlus.svg'
 import { isHtmlElement } from "../../../types";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "./../../../store";
-import { setPersonControlsMenu } from "./../../../store/options";
+import { setModal, setPersonControlsMenu } from "./../../../store/options";
 
 interface MenuItem {
     name: string,
@@ -44,6 +44,13 @@ function Menu() {
         }
     }
 
+    const handleClickNew = (e: React.MouseEvent<HTMLDivElement>) => {
+        const clickedElement = e.target;
+        if (isHtmlElement(clickedElement)) {
+            dispatch(setModal({type: 'formNote', closed: false}))
+        }
+    };
+
     return (
         <div className="person-page__menu">
             {personControlsMenu.map((menuItem:MenuItem, i:number) => {
@@ -53,7 +60,7 @@ function Menu() {
                 </Fragment>
             }
         )}
-        <div className="person-page__new">
+        <div className="person-page__new" onClick={handleClickNew}>
             <MenuItem>{buttonName}</MenuItem>
             <Icon className="menu__plus"><PlusIcon/></Icon>
         </div>
