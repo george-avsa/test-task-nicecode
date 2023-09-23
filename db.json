@@ -11,9 +11,9 @@
       "avatar": "rozhkov_denis.png",
       "notes": [
         {
-          "id": "1b9dcf25-f958-45a9-8cc9-6506edbdbdde",
-          "date": "2019-12-19T21:00:00.000Z",
-          "text": "Физические упражнения способствуют активизации мышечных сокращений, кровотока в тканях, снимают отечность, повышают энергетические возможности мышц. Улучшенное питание мышечной ткани ускоряет замещение различных посттравматических дефектов в самих мышцах, костной ткани, связках и сухожилиях.",
+          "id": "963f1b47-043b-46d3-87e0-f236bb4fe0a2",
+          "date": "2023-09-22",
+          "text": "Физические упражнения способствуют активизации мышечных сокращений, кровотока в тканях, снимают отечность, повышают энергетические возможности мышц. Улучшенное питание мышечной ткани ускоряет замещение различных посттравматических дефектов в самих мышцах, костной ткани, связках и сухожилиях",
           "uploaded": ""
         },
         {
@@ -108,7 +108,14 @@
       "gender": "male",
       "age": 30,
       "avatar": "kravcova_alexandra.png",
-      "notes": [],
+      "notes": [
+        {
+          "id": "20ea7fd9-bb48-425f-89e8-fdaa65d97b80",
+          "date": "Sat Sep 23 2023 14:32:16 GMT+0300 (Moscow Standard Time)",
+          "text": "Some text here",
+          "uploaded": ""
+        }
+      ],
       "meetings": [],
       "videos": [],
       "events": [],
@@ -263,6 +270,26 @@
       "videos": [],
       "events": [],
       "selected": false
+    },
+    {
+      "id": "834a59fb-d2e8-4c95-bf12-275243761242",
+      "firstName": "jfdkjgrkj",
+      "lastName": "rgkjtkjk`",
+      "avatar": null,
+      "telegram": false,
+      "warning": false,
+      "selected": false,
+      "notes": [
+        {
+          "id": "4a592cab-c96f-4cb6-a86b-38bb3a9b2fdb",
+          "date": "Sat Sep 23 2023 18:22:28 GMT+0300 (Moscow Standard Time)",
+          "text": "rltktlktk`\nklkclfkdl",
+          "uploaded": ""
+        }
+      ],
+      "meetings": [],
+      "videos": [],
+      "events": []
     }
   ]
 }

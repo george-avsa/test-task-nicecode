@@ -5,6 +5,7 @@ import { setModal } from "./../../store/options";
 import { resetFields } from "./../../store/forms";
 import PersonDelete from "./PersonDelete";
 import NoteCreator from "./NoteCreator";
+import NoteDelete from "./NoteDelete";
 
 function Modal() {
     const formType = useSelector((state: RootState) => state.options.form.type);
@@ -14,7 +15,7 @@ function Modal() {
     const handleClickWrapper = (e) => {
         if (e.target.classList.contains('modal-wrapper')) {
             dispatch(setModal({closed: true, type: ''}))
-            dispatch(resetFields('formPerson'));
+            dispatch(resetFields());
         }
     }
 
@@ -23,7 +24,8 @@ function Modal() {
             <div className="modal">
                 {(formType === 'formNote') && <NoteCreator></NoteCreator>}
                 {(formType === 'formPerson') && <PersonForm></PersonForm>}
-                {(formType === 'promptDelete') && <PersonDelete></PersonDelete>}
+                {(formType === 'promptDeletePerson') && <PersonDelete></PersonDelete>}
+                {(formType === 'promptDeleteNote') && <NoteDelete></NoteDelete>}
             </div>
         </div>
     );

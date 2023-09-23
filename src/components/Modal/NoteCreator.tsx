@@ -4,17 +4,29 @@ import Button from "./../UI/Button";
 import { isHtmlElement } from "./../../types";
 import { useDispatch, useSelector } from "react-redux";
 import { setInputValue } from "./../../store/forms";
-import { RootState } from "./../../store";
+import { AppDispatch, RootState } from "./../../store";
+import { useEffect, useState } from "react";
+import { postNote } from "./../../store/noteThunks";
 
 function NoteCreator() { 
 
     const formFields = useSelector((state: RootState) => state.forms.formNote);
 
-    const dispatch = useDispatch();
+    const [modalTitle, setModalTitle] = useState('');
+    useEffect(() => {
+        if (formFields.text) {
+            setModalTitle('Изменение заметки');
+        } else {
+            setModalTitle('Создание заметки');
+        }
+    }, [])
+
+    const dispatch = useDispatch<AppDispatch>();
 
     const handleSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
         if (isHtmlElement(e.target)) {
             e.preventDefault();
+            dispatch(postNote(e.target.id))
         }
     }
 
@@ -23,7 +35,7 @@ function NoteCreator() {
         if (isHtmlElement(changedElement)) {
             const form = changedElement?.closest('form');
             dispatch(setInputValue({
-                form: form.id, 
+                form: form.name, 
                 type: changedElement.name, 
                 value: changedElement.value
             }))
@@ -31,7 +43,8 @@ function NoteCreator() {
     }
 
     return (
-        <form className="modal__note" id="formNote" onSubmit={handleSubmitForm}>
+        <form className="modal__note" name="formNote" onSubmit={handleSubmitForm} id={formFields.id}>
+            <h1 className="modal__title">{modalTitle}</h1>
             <Input
                 value={new Date(formFields.date).toISOString().split('T')[0]}
                 handleChange={handleChangeNote}

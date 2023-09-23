@@ -3,8 +3,10 @@ import {ReactComponent as MoreIcon} from "./../../../assets/more.svg"
 import Icon from "../../UI/Icon";
 import PersonDropdown from "./PersonDropdown";
 import { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "./../../../store";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "./../../../store";
+import { loadPersonToForm } from "./../../../store/forms";
+import { setModal } from "./../../../store/options";
 
 function PersonControls() {
 
@@ -30,6 +32,18 @@ function PersonControls() {
             });
         }
         }, [dropdownRef])
+
+    const dispatch = useDispatch<AppDispatch>();
+
+    const handleClickChange = () => {
+        dispatch(loadPersonToForm(0))
+        setDropdown(false)
+    }
+    
+    const handleClickDelete = () => {
+        dispatch(setModal({type: 'promptDeletePerson', closed: false}))
+        setDropdown(false)
+    }
         
     return (
         <div className="person-page__controls">
@@ -43,7 +57,7 @@ function PersonControls() {
                     <span className="person-page__description">30 лет, муж</span>
                 </div>
                 <Icon className="person-page__more" dropdownRef={dropdownRef}>
-                    {dropdown && <PersonDropdown setDropdown={setDropdown} />}
+                    {dropdown && <PersonDropdown handleClickChange={handleClickChange} handleClickDelete={handleClickDelete}/>}
                     <MoreIcon />
                 </Icon>
             </>

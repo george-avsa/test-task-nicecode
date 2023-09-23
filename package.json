@@ -5,9 +5,11 @@
   "main": "src/index.tsx",
   "proxy": "http://localhost:3000",
   "scripts": {
-    "start": "webpack serve --mode development",
+    "start": "npx json-server --watch db.json --port 3001 & webpack serve --mode development",
     "start2": "npx json-server --watch db.json --port 3001 & webpack serve --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "get-info-3000": "sudo lsof -i :3000",
+    "get-info-3001": "sudo lsof -i :3001"
   },
   "author": "",
   "license": "ISC",

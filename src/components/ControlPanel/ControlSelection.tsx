@@ -6,7 +6,6 @@ import { AppDispatch, RootState } from "store";
 import { countSearched, selectPersons } from "./../../store/selectors";
 import { deleteFewPersons, setPersons } from "./../../store/personList";
 import { toggleMode } from "./../../store/options";
-import Dropdown from "./../UI/Dropdown";
 
 const countSelected = (persons:PersonListItem[]) => {
     return persons.reduce((acc:any, person) => {
