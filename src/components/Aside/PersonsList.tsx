@@ -8,7 +8,7 @@ import { RootState } from "store";
 function PersonsList() {
 
     const activePersonId = useSelector((state: RootState) => state.personDetails.id);
-    const persons = useSelector(selectPersons);
+    const persons = useSelector((state: RootState) => state.personList);
     const searchValue = useSelector((state: RootState) => state.options.search);
 
     return (

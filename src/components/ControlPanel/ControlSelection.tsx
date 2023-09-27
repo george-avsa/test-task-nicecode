@@ -3,7 +3,7 @@ import Checkbox from "./../UI/Chekbox"
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "store";
-import { countSearched, selectPersons } from "./../../store/selectors";
+import { selectPersons } from "./../../store/selectors";
 import { deleteFewPersons, setPersons } from "./../../store/personList";
 import { toggleMode } from "./../../store/options";
 
@@ -16,12 +16,22 @@ const countSelected = (persons:PersonListItem[]) => {
     }, 0)
 }
 
+const countSearched = (persons:PersonListItem[], searchValue: string) => {
+    return persons.reduce((acc:any, person) => {
+        if (person.lastName.includes(searchValue) 
+        || person.firstName.includes(searchValue)
+        || !searchValue) {
+            acc += 1;
+        }
+        return acc
+    }, 0)
+}
+
 function ControlSelection() {
 
     const selectMode = useSelector((state: RootState) => state.options.selectMode);
-    const personAmount = useSelector(countSearched);
     const searchValue = useSelector((state: RootState) => state.options.search);
-    const persons = useSelector(selectPersons);
+    const persons = useSelector((state: RootState) => state.personList);
     const allPersons = useSelector((state: RootState) => state.personList);
     const dispatch = useDispatch<AppDispatch>();
 
@@ -80,7 +90,7 @@ function ControlSelection() {
                     </span>
                 </>}
                 <span className={`control-selection__amount ${selectMode ? 'control-selection__amount--select' : ''}`}>
-                    {selectMode ? countSelected(persons) : (searchValue ? personAmount : persons.length)}
+                    {selectMode ? countSelected(persons) : (searchValue ? countSearched(persons, searchValue) : persons.length)}
                 </span>
             </div>
             <div>

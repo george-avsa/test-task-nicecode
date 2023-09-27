@@ -1,15 +1,17 @@
 import { RootState } from "store";
 
 export const selectPersons = ((state:RootState) => {
+    const keklol = [...state.personList];
     const searchValue = state.options.search; 
-    if (searchValue) {
-        return state.personList.filter((person) => {
-            if (searchValue.includes(person.firstName) || searchValue.includes(person.lastName)) {
+    if (searchValue.trim()) {
+        return keklol.filter((person) => {
+            if (person.firstName.includes(searchValue) || person.lastName.includes(searchValue)) {
                 return true
             }
+            return false
         })
     } else {
-        return state.personList
+        return keklol
     }
 });
 

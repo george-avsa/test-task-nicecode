@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 interface FormOption {
     closed: boolean,
-    type: 'formPerson' | 'formNote' | 'promptDeletePerson' | 'promptDeleteNote' | null,
+    type: 'formPerson' | 'formNote' | 'promptDeletePerson' | 'promptDeleteNote' | 'formConsultation' | null,
     idToManipulate: string
 }
 
@@ -28,7 +28,7 @@ const initialState: OptionsState = {
     searchOpened: false,
     form: {
         closed: true,
-        type: 'formNote',
+        type: null,
         idToManipulate: ''
     },
     logger: '',
